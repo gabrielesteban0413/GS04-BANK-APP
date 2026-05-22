@@ -1,15 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="primary_blue">#1A2B4C</color>
-    <color name="primary_dark">#0F1A30</color>
-    <color name="secondary_gold">#F5A623</color>
-    <color name="secondary_gold_dark">#D4921A</color>
-    <color name="white">#FFFFFF</color>
+    <color name="bg_app_light">#F0FFFF</color>     <color name="teal_primary">#008080</color>     <color name="aqua_accent">#00FFFF</color>      <color name="pale_aqua_field">#D1EBE6</color>  <color name="text_dark_navy">#0A1F1F</color>   <color name="text_hint_muted">#7A9A95</color>  <color name="white">#FFFFFF</color>
     <color name="black">#000000</color>
-    <color name="gray_dark">#2D3748</color>
-    <color name="gray_medium">#718096</color>
-    <color name="gray_light">#E2E8F0</color>
-    <color name="background_light">#F8F9FA</color>
-    <color name="success_green">#10B981</color>
     <color name="error_red">#EF4444</color>
 </resources>
