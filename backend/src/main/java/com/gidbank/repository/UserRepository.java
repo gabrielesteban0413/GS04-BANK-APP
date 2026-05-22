@@ -1,10 +1,16 @@
-package com.bankapp.repository;
+package com.gidbank.repository;
 
-import com.bankapp.entity.User;
+import com.gidbank.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 import java.util.Optional;
 
-public interface UserRepository extends JpaRepository<User, String> {
+@Repository
+public interface UserRepository extends JpaRepository<User, Long> {
+
+    // Consultas automáticas que usaremos para el Login y Registro
+    Optional<User> findByCedula(String cedula);
     Optional<User> findByEmail(String email);
-    Optional<User> findByAccountNumber(String accountNumber);
+    boolean existsByCedula(String cedula);
+    boolean existsByEmail(String email);
 }

@@ -1,9 +1,13 @@
-package com.bankapp.repository;
+package com.gidbank.repository;
 
-import com.bankapp.entity.Transaction;
+import com.gidbank.entity.Transaction;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 import java.util.List;
 
-public interface TransactionRepository extends JpaRepository<Transaction, String> {
-    List<Transaction> findByFromUser_UserIdOrderByCreatedAtDesc(String userId);
+@Repository
+public interface TransactionRepository extends JpaRepository<Transaction, Long> {
+
+    // Consulta para buscar el historial de transacciones de un usuario específico
+    List<Transaction> findByFromUserIdOrToUserIdOrderByCreatedAtDesc(Long fromUserId, Long toUserId);
 }

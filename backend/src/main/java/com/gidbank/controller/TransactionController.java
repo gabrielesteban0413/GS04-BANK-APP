@@ -1,10 +1,10 @@
-package com.bankapp.controller;
+package com.gidbank.controller;
 
-import com.bankapp.dto.TransferRequest;
-import com.bankapp.entity.Transaction;
-import com.bankapp.service.TransactionService;
+import com.gidbank.dto.TransferRequest;
+import com.gidbank.entity.Transaction;
+import com.gidbank.service.TransactionService;
 import jakarta.validation.Valid;
-import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -15,18 +15,25 @@ import java.util.Map;
 @RestController
 @RequestMapping("/api/transactions")
 @CrossOrigin(origins = "*")
-@RequiredArgsConstructor
 public class TransactionController {
-    private final TransactionService transactionService;
+
+    @Autowired
+    private TransactionService transactionService;
 
     @PostMapping("/transfer")
     public ResponseEntity<Map<String, String>> transfer(
             @Valid @RequestBody TransferRequest request,
             @RequestHeader("X-User-Id") String userId) {
+
+        // Ejecuta la transferencia
         Transaction tx = transactionService.transfer(request, userId);
+
+        // Construye la respuesta de éxito
         Map<String, String> response = new HashMap<>();
         response.put("message", "Transferencia exitosa");
-        response.put("transactionId", tx.getTransactionId());
+        // Convertimos el ID numérico de Oracle a String para la respuesta JSON
+        response.put("transactionId", String.valueOf(tx.getId()));
+
         return ResponseEntity.ok(response);
     }
 
