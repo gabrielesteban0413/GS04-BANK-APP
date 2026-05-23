@@ -21,21 +21,18 @@ public class AuthController {
     @Autowired
     private AuthService authService;
 
-    // 1. ENDPOINT PARA INICIAR SESIÓN
     @PostMapping("/login")
     public ResponseEntity<LoginResponse> login(@Valid @RequestBody LoginRequest request) {
         return ResponseEntity.ok(authService.login(request));
     }
 
-    // 2. ENDPOINT PARA REGISTRO DE CLIENTES DESDE ANDROID
     @PostMapping("/register")
     public ResponseEntity<UserResponse> register(@Valid @RequestBody UserCreateRequest request) {
-        // Por defecto, cualquier registro desde la app cliente será rol "USER"
         request.setRole("USER");
+        // ESTA LÍNEA LLAMA AL SERVICIO
         return new ResponseEntity<>(authService.register(request), HttpStatus.CREATED);
     }
 
-    // 3. ENDPOINT PARA VALIDAR EL ROL DEL USUARIO ACTUAL
     @GetMapping("/me")
     public ResponseEntity<?> getCurrentUser(@RequestHeader("X-User-Id") String userId) {
         String role = authService.getUserRole(userId);
