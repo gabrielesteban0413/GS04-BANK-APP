@@ -4,91 +4,75 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#F0FFFF"
+    android:background="@color/bg_app_light"
     android:padding="32dp"
     android:gravity="center_horizontal">
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="60dp"
-        android:layout_marginBottom="4dp">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="GID"
-            android:textSize="36sp"
-            android:textStyle="bold"
-            android:textColor="#008080" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="BANK"
-            android:textSize="36sp"
-            android:textStyle="bold"
-            android:textColor="#0A1F1F" />
-    </LinearLayout>
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="8dp"
+        android:src="@drawable/logo_verde" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="BANCA DIGITAL"
+        android:text="@string/banca_digital"
         android:textSize="13sp"
         android:textStyle="bold"
         android:letterSpacing="0.15"
-        android:textColor="#008080"
+        android:textColor="@color/teal_primary"
         android:layout_marginBottom="48dp" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Correo electrónico"
+        android:hint="@string/email_hint"
         android:layout_marginBottom="16dp"
-        app:hintTextColor="#008080"
+        app:hintTextColor="@color/teal_primary"
         app:boxCornerRadiusTopStart="14dp"
         app:boxCornerRadiusTopEnd="14dp"
         app:boxCornerRadiusBottomStart="14dp"
         app:boxCornerRadiusBottomEnd="14dp"
-        app:boxBackgroundColor="#D1EBE6"
+        app:boxBackgroundColor="@color/pale_aqua_field"
         app:boxStrokeWidth="0dp"
         app:boxStrokeWidthFocused="1dp"
-        app:boxStrokeColor="#008080">
+        app:boxStrokeColor="@color/teal_primary">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/etEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textEmailAddress"
-            android:textColor="#0A1F1F"
+            android:textColor="@color/primary_dark"
             android:textSize="16sp" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Contraseña"
+        android:hint="@string/password_hint"
         android:layout_marginBottom="12dp"
         app:endIconMode="password_toggle"
-        app:endIconTint="#008080"
-        app:hintTextColor="#008080"
+        app:endIconTint="@color/teal_primary"
+        app:hintTextColor="@color/teal_primary"
         app:boxCornerRadiusTopStart="14dp"
         app:boxCornerRadiusTopEnd="14dp"
         app:boxCornerRadiusBottomStart="14dp"
         app:boxCornerRadiusBottomEnd="14dp"
-        app:boxBackgroundColor="#D1EBE6"
+        app:boxBackgroundColor="@color/pale_aqua_field"
         app:boxStrokeWidth="0dp"
         app:boxStrokeWidthFocused="1dp"
-        app:boxStrokeColor="#008080">
+        app:boxStrokeColor="@color/teal_primary">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/etPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPassword"
-            android:textColor="#0A1F1F"
+            android:textColor="@color/primary_dark"
             android:textSize="16sp" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -96,21 +80,22 @@
         android:id="@+id/btnLogin"
         android:layout_width="match_parent"
         android:layout_height="56dp"
-        android:text="INGRESAR"
-        android:textColor="#FFFFFF"
+        android:text="@string/login_button"
+        android:textColor="@android:color/white"
         android:textSize="16sp"
         android:textStyle="bold"
         android:layout_marginTop="16dp"
-        android:backgroundTint="#008080"
+        android:backgroundTint="@color/teal_primary"
         app:cornerRadius="14dp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="¿No tienes cuenta? Regístrate"
-        android:textColor="#7A9A95"
+        android:text="@string/register_hint"
+        android:textColor="@color/text_hint_muted"
         android:textSize="14sp"
         android:layout_marginTop="32dp" />
+
     <ProgressBar
         android:id="@+id/progressBar"
         android:layout_width="wrap_content"

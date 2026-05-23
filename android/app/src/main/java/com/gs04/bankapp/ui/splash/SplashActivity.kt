@@ -7,7 +7,7 @@ import androidx.lifecycle.lifecycleScope
 import com.gs04.bankapp.R
 import com.gs04.bankapp.ui.auth.LoginActivity
 import com.gs04.bankapp.ui.dashboard.DashboardActivity
-import kotlinx.coroutines.delay
+
 import kotlinx.coroutines.launch
 
 class SplashActivity : AppCompatActivity() {
@@ -16,7 +16,7 @@ class SplashActivity : AppCompatActivity() {
         setContentView(R.layout.activity_splash)
 
         lifecycleScope.launch {
-            delay(1500)
+
             val intent = if (sesionActiva()) {
                 Intent(this@SplashActivity, DashboardActivity::class.java)
             } else {
