@@ -1,0 +1,11 @@
+<resources>
+    <dimen name="padding_medium">32dp</dimen>
+    <dimen name="padding_small">16dp</dimen>
+    <dimen name="margin_top_logo">40dp</dimen>
+    <dimen name="logo_size">120dp</dimen>
+    <dimen name="button_height">56dp</dimen>
+    <dimen name="corner_radius_medium">14dp</dimen>
+    <dimen name="text_size_title">36sp</dimen>
+    <dimen name="text_size_subtitle">13sp</dimen>
+    <dimen name="text_size_button">16sp</dimen>
+</resources>
