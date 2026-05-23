@@ -1,4 +1,4 @@
-package com.bankapp;
+package com.gidbank;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

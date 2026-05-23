@@ -32,22 +32,16 @@ class LoginActivity : AppCompatActivity() {
 
         viewModel.uiState.onEach { state ->
             when (state) {
-                is LoginUiState.Loading -> {
+                is LoginViewModel.LoginUiState.Loading -> { // <--- Agrega el LoginViewModel. aquí
                     binding.progressBar.visibility = android.view.View.VISIBLE
                     binding.btnLogin.isEnabled = false
                 }
-                is LoginUiState.Success -> {
+                is LoginViewModel.LoginUiState.Success -> { // <--- Agrega el LoginViewModel. aquí
                     binding.progressBar.visibility = android.view.View.GONE
                     binding.btnLogin.isEnabled = true
-                    val intent = Intent(this, DashboardActivity::class.java)
-                    intent.putExtra("userId", state.data.userId)
-                    intent.putExtra("userName", state.data.fullName)
-                    intent.putExtra("balance", state.data.balance)
-                    intent.putExtra("role", state.data.role)
-                    startActivity(intent)
-                    finish()
+                    // ... resto del código
                 }
-                is LoginUiState.Error -> {
+                is LoginViewModel.LoginUiState.Error -> {   // <--- Agrega el LoginViewModel. aquí
                     binding.progressBar.visibility = android.view.View.GONE
                     binding.btnLogin.isEnabled = true
                     Toast.makeText(this, state.message, Toast.LENGTH_LONG).show()
