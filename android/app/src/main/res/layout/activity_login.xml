@@ -81,7 +81,7 @@
         android:layout_width="match_parent"
         android:layout_height="56dp"
         android:text="@string/login_button"
-        android:textColor="@android:color/white"
+        android:textColor="#FFFFFF"
         android:textSize="16sp"
         android:textStyle="bold"
         android:layout_marginTop="16dp"
@@ -89,9 +89,10 @@
         app:cornerRadius="14dp" />
 
     <TextView
+        android:id="@+id/tvRegisterLink"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/register_hint"
+        android:text="@string/register_link"
         android:textColor="@color/text_hint_muted"
         android:textSize="14sp"
         android:layout_marginTop="32dp" />
