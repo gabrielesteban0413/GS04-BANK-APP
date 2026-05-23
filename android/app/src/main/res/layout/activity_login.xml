@@ -48,10 +48,10 @@
         android:hint="Correo electrónico"
         android:layout_marginBottom="16dp"
         app:hintTextColor="#008080"
-        app:defaultBoxRadiusTopStart="14dp"
-        app:defaultBoxRadiusTopEnd="14dp"
-        app:defaultBoxRadiusBottomStart="14dp"
-        app:defaultBoxRadiusBottomEnd="14dp"
+        app:boxCornerRadiusTopStart="14dp"
+        app:boxCornerRadiusTopEnd="14dp"
+        app:boxCornerRadiusBottomStart="14dp"
+        app:boxCornerRadiusBottomEnd="14dp"
         app:boxBackgroundColor="#D1EBE6"
         app:boxStrokeWidth="0dp"
         app:boxStrokeWidthFocused="1dp"
@@ -74,10 +74,10 @@
         app:endIconMode="password_toggle"
         app:endIconTint="#008080"
         app:hintTextColor="#008080"
-        app:defaultBoxRadiusTopStart="14dp"
-        app:defaultBoxRadiusTopEnd="14dp"
-        app:defaultBoxRadiusBottomStart="14dp"
-        app:defaultBoxRadiusBottomEnd="14dp"
+        app:boxCornerRadiusTopStart="14dp"
+        app:boxCornerRadiusTopEnd="14dp"
+        app:boxCornerRadiusBottomStart="14dp"
+        app:boxCornerRadiusBottomEnd="14dp"
         app:boxBackgroundColor="#D1EBE6"
         app:boxStrokeWidth="0dp"
         app:boxStrokeWidthFocused="1dp"
@@ -111,5 +111,11 @@
         android:textColor="#7A9A95"
         android:textSize="14sp"
         android:layout_marginTop="32dp" />
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:visibility="gone" />
 
 </LinearLayout>
