@@ -1,3 +1,12 @@
 <resources>
-    <string name="app_name">GS04 BankApp</string>
+    <string name="app_name">GIDBank</string>
+
+    <string name="error_empty_fields">Por favor, completa todos los campos.</string>
+
+
+    <string name="banca_digital">BANCA DIGITAL</string>
+    <string name="email_hint">Correo electrónico</string>
+    <string name="password_hint">Contraseña</string>
+    <string name="login_button">INGRESAR</string>
+    <string name="register_hint">¿No tienes cuenta? Regístrate</string>
 </resources>
