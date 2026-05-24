@@ -1,62 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@color/bg_app_light">
 
-    <!-- CABECERA (igual que en transfer) -->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:paddingTop="24dp"
-        android:paddingBottom="8dp"
-        android:paddingStart="16dp"
-        android:paddingEnd="16dp"
-        android:background="@color/bg_app_light">
+    <!-- Círculos decorativos de fondo (posiciones únicas para editar perfil) -->
+    <View
+        android:layout_width="260dp"
+        android:layout_height="260dp"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="-100dp"
+        android:layout_marginStart="-80dp"
+        android:background="@drawable/bg_circle_primary_light"
+        android:alpha="0.25" />
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp">
+    <View
+        android:layout_width="180dp"
+        android:layout_height="180dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="150dp"
+        android:layout_marginEnd="-60dp"
+        android:background="@drawable/bg_circle_secondary_light"
+        android:alpha="0.3" />
 
-            <ImageButton
-                android:id="@+id/btnBack"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:src="@drawable/ic_arrow_back"
-                android:background="?attr/selectableItemBackgroundBorderless"
-                android:tint="@color/teal_primary"
-                android:layout_alignParentStart="true"
-                android:contentDescription="Atrás" />
+    <View
+        android:layout_width="220dp"
+        android:layout_height="220dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="-80dp"
+        android:layout_marginStart="20dp"
+        android:background="@drawable/bg_circle_primary_light"
+        android:alpha="0.2" />
 
-            <ImageView
-                android:id="@+id/ivLogo"
-                android:layout_width="100dp"
-                android:layout_height="32dp"
-                android:src="@drawable/logo_verde"
-                android:layout_centerInParent="true"
-                android:contentDescription="Logo" />
-        </RelativeLayout>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Editar perfil"
-            android:textSize="28sp"
-            android:textStyle="bold"
-            android:textColor="@color/primary_dark"
-            android:layout_marginBottom="4dp" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Actualiza tu información personal"
-            android:textSize="14sp"
-            android:textColor="@color/text_hint_muted" />
-    </LinearLayout>
+    <View
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="100dp"
+        android:layout_marginEnd="-30dp"
+        android:background="@drawable/bg_circle_secondary_light"
+        android:alpha="0.25" />
 
     <ScrollView
         android:layout_width="match_parent"
@@ -67,27 +52,76 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:paddingHorizontal="20dp"
-            android:paddingBottom="32dp">
+            android:orientation="vertical">
 
-            <!-- TARJETA DE PERFIL (avatar + nombre + rol) -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:background="@drawable/bg_card_rounded"
-                android:padding="20dp"
-                android:layout_marginBottom="20dp"
-                android:gravity="center_horizontal">
+                android:paddingTop="24dp"
+                android:paddingBottom="8dp"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:background="@color/bg_app_light">
 
-                <LinearLayout
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp">
+
+                    <ImageButton
+                        android:id="@+id/btnBack"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/ic_arrow_back"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:tint="@color/primary"
+                        android:layout_alignParentStart="true"
+                        android:contentDescription="@string/back_description" />
+
+                    <ImageView
+                        android:id="@+id/ivLogo"
+                        android:layout_width="100dp"
+                        android:layout_height="32dp"
+                        android:src="@drawable/logo_verde"
+                        android:layout_centerInParent="true"
+                        android:contentDescription="@string/logo_description" />
+                </RelativeLayout>
+
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:gravity="center">
+                    android:text="@string/edit_profile_title"
+                    android:textSize="28sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/primary_dark"
+                    android:layout_marginBottom="4dp" />
 
-                    <!-- Avatar con botón de cambio (circular) -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/edit_profile_subtitle"
+                    android:textSize="14sp"
+                    android:textColor="@color/text_hint_muted" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingHorizontal="20dp"
+                android:paddingBottom="32dp">
+
+                <!-- Tarjeta de avatar -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="@drawable/bg_card_rounded"
+                    android:padding="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:gravity="center_horizontal">
+
                     <RelativeLayout
                         android:layout_width="100dp"
                         android:layout_height="100dp"
@@ -96,7 +130,7 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:background="@drawable/bg_circle_teal_light"
+                            android:background="@drawable/bg_circle_primary_light"
                             android:gravity="center">
 
                             <ImageView
@@ -104,7 +138,7 @@
                                 android:layout_width="80dp"
                                 android:layout_height="80dp"
                                 android:src="@drawable/ic_avatar_default"
-                                android:contentDescription="Avatar" />
+                                android:contentDescription="@string/profile_avatar_description" />
                         </LinearLayout>
 
                         <ImageButton
@@ -113,10 +147,10 @@
                             android:layout_height="32dp"
                             android:src="@drawable/ic_camera"
                             android:background="@drawable/bg_circle_white"
-                            android:tint="@color/teal_primary"
+                            android:tint="@color/primary"
                             android:layout_alignParentEnd="true"
                             android:layout_alignParentBottom="true"
-                            android:contentDescription="Cambiar foto" />
+                            android:contentDescription="@string/change_photo_description" />
                     </RelativeLayout>
 
                     <TextView
@@ -137,171 +171,166 @@
                         android:textColor="@color/text_hint_muted"
                         android:layout_marginTop="4dp" />
                 </LinearLayout>
-            </LinearLayout>
 
-            <!-- TARJETA DE CAMPOS EDITABLES -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:background="@drawable/bg_card_rounded"
-                android:padding="20dp"
-                android:layout_marginBottom="20dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="INFORMACIÓN PERSONAL"
-                    android:textSize="12sp"
-                    android:textStyle="bold"
-                    android:textColor="@color/teal_primary"
-                    android:layout_marginBottom="16dp" />
-
-                <!-- Nombre completo -->
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Nombre completo"
-                    android:textSize="13sp"
-                    android:textColor="@color/primary_dark"
-                    android:layout_marginBottom="4dp" />
-
-                <EditText
-                    android:id="@+id/etFullName"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Tu nombre completo"
-                    android:inputType="textPersonName"
-                    android:padding="16dp"
-                    android:background="@drawable/bg_edittext_rounded"
-                    android:textColor="@color/primary_dark"
-                    android:textSize="16sp"
-                    android:layout_marginBottom="16dp" />
-
-                <!-- Correo electrónico -->
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Correo electrónico"
-                    android:textSize="13sp"
-                    android:textColor="@color/primary_dark"
-                    android:layout_marginBottom="4dp" />
-
-                <EditText
-                    android:id="@+id/etEmail"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="tucorreo@ejemplo.com"
-                    android:inputType="textEmailAddress"
-                    android:padding="16dp"
-                    android:background="@drawable/bg_edittext_rounded"
-                    android:textColor="@color/primary_dark"
-                    android:textSize="16sp"
-                    android:layout_marginBottom="16dp" />
-
-                <!-- Teléfono -->
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Teléfono"
-                    android:textSize="13sp"
-                    android:textColor="@color/primary_dark"
-                    android:layout_marginBottom="4dp" />
-
-                <EditText
-                    android:id="@+id/etPhone"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="+1234567890"
-                    android:inputType="phone"
-                    android:padding="16dp"
-                    android:background="@drawable/bg_edittext_rounded"
-                    android:textColor="@color/primary_dark"
-                    android:textSize="16sp"
-                    android:layout_marginBottom="16dp" />
-
-                <!-- Fecha de nacimiento -->
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Fecha de nacimiento"
-                    android:textSize="13sp"
-                    android:textColor="@color/primary_dark"
-                    android:layout_marginBottom="4dp" />
-
-                <EditText
-                    android:id="@+id/etBirthDate"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="DD/MM/AAAA"
-                    android:inputType="date"
-                    android:padding="16dp"
-                    android:background="@drawable/bg_edittext_rounded"
-                    android:textColor="@color/primary_dark"
-                    android:textSize="16sp" />
-            </LinearLayout>
-
-            <!-- TARJETA DE INFORMACIÓN ADICIONAL (solo lectura) -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:background="@drawable/bg_card_rounded"
-                android:padding="20dp"
-                android:layout_marginBottom="20dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="OTROS DATOS"
-                    android:textSize="12sp"
-                    android:textStyle="bold"
-                    android:textColor="@color/teal_primary"
-                    android:layout_marginBottom="12dp" />
-
+                <!-- Tarjeta de información personal -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:orientation="vertical"
+                    android:background="@drawable/bg_card_rounded"
+                    android:padding="20dp"
+                    android:layout_marginBottom="20dp">
 
                     <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="Miembro desde:"
-                        android:textSize="14sp"
-                        android:textColor="@color/text_hint_muted" />
-
-                    <TextView
-                        android:id="@+id/tvJoinedDate"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="28 enero 2021"
-                        android:textSize="14sp"
+                        android:text="@string/personal_info_title"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/primary"
+                        android:layout_marginBottom="16dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/full_name_label"
+                        android:textSize="13sp"
                         android:textColor="@color/primary_dark"
-                        android:textStyle="bold" />
+                        android:layout_marginBottom="4dp" />
+
+                    <EditText
+                        android:id="@+id/etFullName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/full_name_hint"
+                        android:inputType="textPersonName"
+                        android:padding="16dp"
+                        android:background="@drawable/bg_edittext_rounded"
+                        android:textColor="@color/primary_dark"
+                        android:textSize="16sp"
+                        android:layout_marginBottom="16dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/email_label"
+                        android:textSize="13sp"
+                        android:textColor="@color/primary_dark"
+                        android:layout_marginBottom="4dp" />
+
+                    <EditText
+                        android:id="@+id/etEmail"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/email_hint"
+                        android:inputType="textEmailAddress"
+                        android:padding="16dp"
+                        android:background="@drawable/bg_edittext_rounded"
+                        android:textColor="@color/primary_dark"
+                        android:textSize="16sp"
+                        android:layout_marginBottom="16dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/phone_label"
+                        android:textSize="13sp"
+                        android:textColor="@color/primary_dark"
+                        android:layout_marginBottom="4dp" />
+
+                    <EditText
+                        android:id="@+id/etPhone"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/phone_hint"
+                        android:inputType="phone"
+                        android:padding="16dp"
+                        android:background="@drawable/bg_edittext_rounded"
+                        android:textColor="@color/primary_dark"
+                        android:textSize="16sp"
+                        android:layout_marginBottom="16dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/birth_date_label"
+                        android:textSize="13sp"
+                        android:textColor="@color/primary_dark"
+                        android:layout_marginBottom="4dp" />
+
+                    <EditText
+                        android:id="@+id/etBirthDate"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/birth_date_hint"
+                        android:inputType="date"
+                        android:padding="16dp"
+                        android:background="@drawable/bg_edittext_rounded"
+                        android:textColor="@color/primary_dark"
+                        android:textSize="16sp" />
                 </LinearLayout>
+
+                <!-- Tarjeta de otros datos -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="@drawable/bg_card_rounded"
+                    android:padding="20dp"
+                    android:layout_marginBottom="20dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/other_data_title"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/primary"
+                        android:layout_marginBottom="12dp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/member_since_label"
+                            android:textSize="14sp"
+                            android:textColor="@color/text_hint_muted" />
+
+                        <TextView
+                            android:id="@+id/tvJoinedDate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/joined_date_text"
+                            android:textSize="14sp"
+                            android:textColor="@color/primary_dark"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/btnSaveProfile"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:text="@string/save_changes_button"
+                    android:textColor="#FFFFFF"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:background="@drawable/bg_button_rounded"
+                    android:layout_marginBottom="16dp" />
+
+                <ProgressBar
+                    android:id="@+id/progressBar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:layout_gravity="center" />
+
             </LinearLayout>
-
-            <!-- BOTÓN GUARDAR CAMBIOS -->
-            <Button
-                android:id="@+id/btnSaveProfile"
-                android:layout_width="match_parent"
-                android:layout_height="56dp"
-                android:text="Guardar cambios"
-                android:textColor="#FFFFFF"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                android:background="@drawable/bg_button_rounded"
-                android:layout_marginBottom="16dp" />
-
-            <ProgressBar
-                android:id="@+id/progressBar"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:visibility="gone"
-                android:layout_gravity="center" />
-
         </LinearLayout>
     </ScrollView>
-</LinearLayout>
+</RelativeLayout>

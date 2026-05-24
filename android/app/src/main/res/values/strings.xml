@@ -1,10 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">GIDBank</string>
-    <string name="banca_digital">BANCA DIGITAL</string>
-    <string name="email_hint">Correo electrónico</string>
+    <string name="app_name">GS04 Bank App</string>
+    <string name="login_welcome">¡Bienvenido de nuevo!</string>
+    <string name="login_subtitle">Inicia sesión para continuar</string>
+    <string name="cedula_hint">Cédula</string>
     <string name="password_hint">Contraseña</string>
-    <string name="login_button">INGRESAR</string>
-    <string name="register_link">¿No tienes cuenta? Regístrate</string>
-    <string name="empty_fields_error">Completa todos los campos</string>
-    <string name="login_success">Inicio de sesión exitoso</string>
+    <string name="forgot_password">¿Olvidaste tu contraseña?</string>
+    <string name="login_button">INICIAR SESIÓN</string>
+    <string name="register_link">¿No tienes cuenta? Créala aquí</string>
+    <string name="register_title">Crear cuenta</string>
+    <string name="register_subtitle">Regístrate para comenzar</string>
+    <string name="fullname_hint">Nombre completo</string>
+    <string name="email_hint">Correo electrónico</string>
+    <string name="celular_hint">Celular</string>
+    <string name="confirm_password_hint">Confirmar contraseña</string>
+    <string name="register_button">REGISTRARME</string>
+    <string name="login_account_link">¿Ya tienes cuenta? Inicia sesión</string>
+    <string name="history_title">Historial</string>
+    <string name="history_subtitle">Tus movimientos recientes</string>
+    <string name="category_summary">RESUMEN POR CATEGORÍAS</string>
+    <string name="recent_transactions">TRANSACCIONES RECIENTES</string>
+    <string name="today">Hoy</string>
+    <string name="last_7_days">Últimos 7 días</string>
+    <string name="view_all">Ver todas</string>
+    <string name="back_description">Atrás</string>
+    <string name="logo_description">Logo</string>
+
+
+
+
+    <!-- Edit Profile -->
+    <string name="edit_profile_title">Editar perfil</string>
+    <string name="edit_profile_subtitle">Actualiza tu información personal</string>
+    <string name="personal_info_title">INFORMACIÓN PERSONAL</string>
+    <string name="full_name_label">Nombre completo</string>
+    <string name="full_name_hint">Tu nombre completo</string>
+    <string name="email_label">Correo electrónico</string>
+    <string name="phone_label">Teléfono</string>
+    <string name="phone_hint">+1234567890</string>
+    <string name="birth_date_label">Fecha de nacimiento</string>
+    <string name="birth_date_hint">DD/MM/AAAA</string>
+    <string name="other_data_title">OTROS DATOS</string>
+    <string name="member_since_label">Miembro desde:</string>
+    <string name="joined_date_text">28 enero 2021</string>
+    <string name="save_changes_button">Guardar cambios</string>
+    <string name="change_photo_description">Cambiar foto</string>
+    <string name="profile_avatar_description">Avatar</string>
+
+
+    <!-- Terms and Conditions -->
+    <string name="terms_title">Términos y Condiciones</string>
+    <string name="terms_last_updated">Última actualización: 1 de abril de 2025</string>
+    <string name="terms_section1_title">1. Aceptación de los términos</string>
+    <string name="terms_section1_text">Al acceder y utilizar la aplicación GS04 Bank App, usted acepta cumplir con estos términos y condiciones. Si no está de acuerdo, no utilice la aplicación.</string>
+    <string name="terms_section2_title">2. Uso de la aplicación</string>
+    <string name="terms_section2_text">Usted se compromete a usar la aplicación solo para fines legales y de acuerdo con todas las leyes aplicables. No debe intentar acceder a áreas restringidas ni interferir con el funcionamiento de la aplicación.</string>
+    <string name="terms_section3_title">3. Privacidad y datos</string>
+    <string name="terms_section3_text">Sus datos personales serán tratados conforme a nuestra Política de Privacidad. Al usar la aplicación, usted consiente dicha recolección y uso.</string>
+    <string name="terms_section4_title">4. Responsabilidad</string>
+    <string name="terms_section4_text">La aplicación se proporciona 'tal cual'. No garantizamos que esté libre de errores o interrupciones. No seremos responsables por daños indirectos derivados del uso de la aplicación.</string>
+    <string name="terms_section5_title">5. Cambios a los términos</string>
+    <string name="terms_section5_text">Podemos actualizar estos términos en cualquier momento. Le notificaremos sobre cambios importantes mediante la aplicación o por correo electrónico.</string>
+    <string name="terms_section6_title">6. Contacto</string>
+    <string name="terms_section6_text">Si tienes preguntas sobre estos términos, contáctanos en soporte@gs04bank.com.</string>
+    <string name="terms_decline_button">Rechazar</string>
+    <string name="terms_accept_button">Aceptar</string>
+
+
+
+    <!-- Transfer -->
+    <string name="transfer_title">Enviar dinero</string>
+    <string name="transfer_subtitle">Rápido, seguro y sin comisiones</string>
+    <string name="transfer_receiver_label">RECEPTOR</string>
+    <string name="transfer_receiver_name">Juan Pérez</string>
+    <string name="transfer_receiver_id">Cédula: 123.456.789</string>
+    <string name="transfer_receiver_verified">✓ Verificado</string>
+    <string name="transfer_from_label">DESDE</string>
+    <string name="transfer_account_name">Cuenta Principal</string>
+    <string name="transfer_account_balance">Saldo disponible: $5,250.00</string>
+    <string name="transfer_amount_label">MONTO</string>
+    <string name="transfer_amount_hint">$ 0.00</string>
+    <string name="transfer_fee_text">Comisión: 0% · </string>
+    <string name="transfer_speed_text">Llega en minutos</string>
+    <string name="transfer_destination_label">CUENTA DESTINO</string>
+    <string name="transfer_destination_hint">Ej: ES01, ES02, ...</string>
+    <string name="transfer_destination_format">Formato: ES + dos números (ES01, ES02...)</string>
+    <string name="transfer_concept_label">CONCEPTO (OPCIONAL)</string>
+    <string name="transfer_concept_hint">Ej: Pago de servicios</string>
+    <string name="transfer_continue_button">Continuar</string>
+    <string name="transfer_change_receiver_description">Cambiar receptor</string>
+    <string name="transfer_change_account_description">Cambiar cuenta</string>
+
+
+
 </resources>

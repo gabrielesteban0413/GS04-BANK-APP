@@ -5,9 +5,6 @@
     android:layout_height="match_parent"
     android:background="@color/bg_app_light">
 
-    <!-- Círculos decorativos de fondo (posiciones distintas al login) -->
-
-    <!-- Círculo primario grande, arriba a la derecha -->
     <View
         android:layout_width="280dp"
         android:layout_height="280dp"
@@ -17,7 +14,6 @@
         android:background="@drawable/bg_circle_primary_light"
         android:alpha="0.3" />
 
-    <!-- Círculo secundario mediano, abajo a la izquierda -->
     <View
         android:layout_width="220dp"
         android:layout_height="220dp"
@@ -27,7 +23,6 @@
         android:background="@drawable/bg_circle_secondary_light"
         android:alpha="0.35" />
 
-    <!-- Círculo primario claro, centrado hacia la derecha media -->
     <View
         android:layout_width="180dp"
         android:layout_height="180dp"
@@ -37,7 +32,6 @@
         android:background="@drawable/bg_circle_primary_light"
         android:alpha="0.2" />
 
-    <!-- Círculo pequeño secundario, arriba a la izquierda -->
     <View
         android:layout_width="120dp"
         android:layout_height="120dp"
@@ -59,7 +53,6 @@
             android:padding="32dp"
             android:gravity="center_horizontal">
 
-            <!-- LOGO -->
             <ImageView
                 android:id="@+id/logo"
                 android:layout_width="100dp"
@@ -67,13 +60,12 @@
                 android:layout_marginTop="30dp"
                 android:layout_marginBottom="8dp"
                 android:src="@drawable/logo_verde"
-                android:contentDescription="Logo" />
+                android:contentDescription="@string/logo_description" />
 
-            <!-- TÍTULO -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Crear cuenta"
+                android:text="@string/register_title"
                 android:textSize="24sp"
                 android:textStyle="bold"
                 android:textColor="@color/primary"
@@ -82,16 +74,15 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Regístrate para comenzar"
+                android:text="@string/register_subtitle"
                 android:textSize="14sp"
                 android:textColor="@color/text_hint_muted"
                 android:layout_marginBottom="32dp" />
 
-            <!-- CÉDULA -->
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Cédula"
+                android:hint="@string/cedula_hint"
                 android:layout_marginBottom="16dp"
                 app:hintTextColor="@color/primary"
                 app:boxCornerRadiusTopStart="16dp"
@@ -113,11 +104,10 @@
                     android:textSize="16sp" />
             </com.google.android.material.textfield.TextInputLayout>
 
-            <!-- NOMBRE COMPLETO -->
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Nombre completo"
+                android:hint="@string/fullname_hint"
                 android:layout_marginBottom="16dp"
                 app:hintTextColor="@color/primary"
                 app:boxCornerRadiusTopStart="16dp"
@@ -139,11 +129,10 @@
                     android:textSize="16sp" />
             </com.google.android.material.textfield.TextInputLayout>
 
-            <!-- EMAIL -->
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Correo electrónico"
+                android:hint="@string/email_hint"
                 android:layout_marginBottom="16dp"
                 app:hintTextColor="@color/primary"
                 app:boxCornerRadiusTopStart="16dp"
@@ -165,11 +154,10 @@
                     android:textSize="16sp" />
             </com.google.android.material.textfield.TextInputLayout>
 
-            <!-- CELULAR -->
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Celular"
+                android:hint="@string/celular_hint"
                 android:layout_marginBottom="16dp"
                 app:hintTextColor="@color/primary"
                 app:boxCornerRadiusTopStart="16dp"
@@ -191,11 +179,10 @@
                     android:textSize="16sp" />
             </com.google.android.material.textfield.TextInputLayout>
 
-            <!-- CONTRASEÑA -->
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Contraseña"
+                android:hint="@string/password_hint"
                 android:layout_marginBottom="16dp"
                 app:endIconMode="password_toggle"
                 app:endIconTint="@color/primary"
@@ -218,11 +205,10 @@
                     android:textSize="16sp" />
             </com.google.android.material.textfield.TextInputLayout>
 
-            <!-- CONFIRMAR CONTRASEÑA -->
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Confirmar contraseña"
+                android:hint="@string/confirm_password_hint"
                 android:layout_marginBottom="24dp"
                 app:endIconMode="password_toggle"
                 app:endIconTint="@color/primary"
@@ -245,12 +231,11 @@
                     android:textSize="16sp" />
             </com.google.android.material.textfield.TextInputLayout>
 
-            <!-- BOTÓN REGISTRAR -->
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnRegister"
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
-                android:text="REGISTRARME"
+                android:text="@string/register_button"
                 android:textColor="#FFFFFF"
                 android:textSize="16sp"
                 android:textStyle="bold"
@@ -258,12 +243,11 @@
                 app:cornerRadius="28dp"
                 android:layout_marginBottom="16dp" />
 
-            <!-- LINK LOGIN -->
             <TextView
                 android:id="@+id/tvLoginLink"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="¿Ya tienes cuenta? Inicia sesión"
+                android:text="@string/login_account_link"
                 android:textColor="@color/primary"
                 android:textSize="14sp"
                 android:layout_marginTop="8dp"
@@ -271,7 +255,6 @@
                 android:clickable="true"
                 android:focusable="true" />
 
-            <!-- PROGRESS -->
             <ProgressBar
                 android:id="@+id/progressBar"
                 android:layout_width="wrap_content"
