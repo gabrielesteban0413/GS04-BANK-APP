@@ -1,18 +1,14 @@
 package com.gs04.bankapp.ui.auth
 
-import android.content.Context
 import android.content.Intent
-import android.content.SharedPreferences
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
-import com.gs04.bankapp.R
 import com.gs04.bankapp.databinding.ActivityLoginBinding
-import com.gs04.bankapp.ui.dashboard.DashboardActivity
+import com.gs04.bankapp.ui.dashboard.DashboardActivity // Importación asegurada
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
 
@@ -23,13 +19,10 @@ class LoginActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        // Inflamos la vista
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Configuración de eventos
         setupListeners()
-        // Configuración de observadores
         setupObservers()
     }
 
@@ -45,9 +38,10 @@ class LoginActivity : AppCompatActivity() {
             }
         }
 
-        // Listener para el botón de Registro
+        // EL BOTÓN DE REGISTRO VA AQUÍ, AFUERA DE CUALQUIER OBSERVADOR
         binding.tvRegister.setOnClickListener {
-            startActivity(Intent(this, RegisterActivity::class.java))
+            val intent = Intent(this, RegisterActivity::class.java)
+            startActivity(intent)
         }
     }
 
@@ -62,15 +56,14 @@ class LoginActivity : AppCompatActivity() {
                     binding.progressBar.visibility = View.GONE
                     binding.btnLogin.isEnabled = true
 
-                    // AQUÍ ES DONDE NAVEGAMOS ENVIANDO LOS DATOS
-                    val loginResponse = state.data // Asegúrate de tener acceso a los datos del éxito
+                    // Navegación a Dashboard
+                    val data = state.data
+                    val intent = Intent(this, DashboardActivity::class.java)
+                    intent.putExtra("userId", data.userId)
+                    intent.putExtra("fullName", data.fullName)
+                    intent.putExtra("balance", data.balance)
+                    intent.putExtra("role", data.role)
 
-                    val intent = Intent(this, DashboardActivity::class.java).apply {
-                        putExtra("userId", loginResponse.userId)
-                        putExtra("fullName", loginResponse.fullName)
-                        putExtra("balance", loginResponse.balance)
-                        putExtra("role", loginResponse.role)
-                    }
                     startActivity(intent)
                     finish()
                 }
