@@ -26,4 +26,8 @@ public class UserResponse {
     public void setRole(String role) { this.role = role; }
     public String getActive() { return active; }
     public void setActive(String active) { this.active = active; }
+
+    public UserResponse() {
+        // Constructor vacío necesario para los setters
+    }
 }

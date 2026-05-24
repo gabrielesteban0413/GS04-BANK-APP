@@ -7,23 +7,19 @@ import retrofit2.http.*
 interface ApiService {
 
     // --- MÓDULO DE AUTENTICACIÓN ---
+    // El servidor espera /api/auth/login. Como la base ya tiene /api/, ponemos auth/login
     @POST("auth/login")
     suspend fun login(@Body request: LoginRequest): Response<LoginResponse>
 
-    // Registro público (para nuevos clientes)
     @POST("auth/register")
     suspend fun register(@Body request: RegisterRequest): Response<UserResponse>
 
     @GET("auth/me")
     suspend fun getUserRole(@Header("X-User-Id") userId: String): Response<Map<String, String>>
 
-
-    // --- MÓDULO ADMINISTRATIVO (Requiere Header X-User-Id) ---
-    @POST("auth/register") // Para creación manual por un admin
-    suspend fun createUser(
-        @Header("X-User-Id") adminUserId: String,
-        @Body request: UserCreateRequest
-    ): Response<UserResponse>
+    // --- MÓDULO ADMINISTRATIVO ---
+    @POST("admin/users")
+    suspend fun createUser(@Header("X-User-Id") adminUserId: String, @Body request: UserCreateRequest): Response<UserResponse>
 
     @GET("admin/users")
     suspend fun getAllUsers(@Header("X-User-Id") adminUserId: String): Response<List<UserResponse>>
@@ -40,7 +36,6 @@ interface ApiService {
         @Header("X-User-Id") adminUserId: String,
         @Path("userId") targetUserId: String
     ): Response<Unit>
-
 
     // --- MÓDULO DE TRANSACCIONES ---
     @POST("transactions/transfer")

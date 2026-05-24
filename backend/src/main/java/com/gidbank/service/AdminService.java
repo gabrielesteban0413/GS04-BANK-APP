@@ -1,8 +1,6 @@
 package com.gidbank.service;
 
-import com.gidbank.dto.UserCreateRequest;
-import com.gidbank.dto.UserResponse;
-import com.gidbank.dto.UserUpdateRequest;
+import com.gidbank.dto.*;
 import com.gidbank.entity.User;
 import com.gidbank.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,18 +26,14 @@ public class AdminService {
             throw new RuntimeException("La cédula ya existe");
 
         User user = new User();
-
-        // Separamos el nombre completo que viene en el request en Nombre y Apellido
-        String[] parts = request.getFullName().split(" ", 2);
-        user.setNombre(parts[0]);
-        user.setApellido(parts.length > 1 ? parts[1] : "");
-
+        // Ahora guardamos el nombre completo directamente
+        user.setNombre(request.getFullName());
         user.setEmail(request.getEmail());
         user.setCedula(request.getCedula());
         user.setPassword(passwordEncoder.encode(request.getPassword()));
         user.setBalance(request.getInitialBalance());
         user.setRole(request.getRole());
-        user.setActivo("A"); // "A" de Activo según nuestro diseño
+        user.setActivo("A");
 
         return toResponse(userRepository.save(user));
     }
@@ -59,11 +53,9 @@ public class AdminService {
         User user = userRepository.findById(Long.parseLong(userId))
                 .orElseThrow(() -> new RuntimeException("Usuario no encontrado"));
 
-        if (request.getFullName() != null) {
-            String[] parts = request.getFullName().split(" ", 2);
-            user.setNombre(parts[0]);
-            if (parts.length > 1) user.setApellido(parts[1]);
-        }
+        // Actualizamos solo nombre completo
+        if (request.getFullName() != null) user.setNombre(request.getFullName());
+
         if (request.getEmail() != null) user.setEmail(request.getEmail());
         if (request.getBalance() != null) user.setBalance(request.getBalance());
         if (request.getRole() != null) user.setRole(request.getRole());
@@ -81,9 +73,10 @@ public class AdminService {
     private UserResponse toResponse(User user) {
         UserResponse resp = new UserResponse();
         resp.setUserId(String.valueOf(user.getId()));
-        resp.setFullName(user.getNombre() + " " + user.getApellido());
+        // Ya no necesitamos concatenar nombre + apellido
+        resp.setFullName(user.getNombre());
         resp.setEmail(user.getEmail());
-        resp.setAccountNumber(user.getCedula()); // Usamos la cédula como número identificador
+        resp.setAccountNumber(user.getCedula());
         resp.setBalance(user.getBalance());
         resp.setRole(user.getRole());
         resp.setActive(user.getActivo());

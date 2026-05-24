@@ -1,4 +1,4 @@
-package com.gs04.bankapp.presentation
+package com.gs04.bankapp
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

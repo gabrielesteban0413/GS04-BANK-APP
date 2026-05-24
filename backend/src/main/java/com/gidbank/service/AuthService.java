@@ -1,11 +1,10 @@
 package com.gidbank.service;
 
-import com.gidbank.dto.LoginRequest;
-import com.gidbank.dto.LoginResponse;
-import com.gidbank.dto.UserCreateRequest;
-import com.gidbank.dto.UserResponse;
+import com.gidbank.dto.*;
 import com.gidbank.repository.UserRepository;
+import com.gidbank.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder; // Necesario para encriptar
 import org.springframework.stereotype.Service;
 
 @Service
@@ -14,25 +13,36 @@ public class AuthService {
     @Autowired
     private UserRepository userRepository;
 
-    // Método que el controlador está buscando
-    public UserResponse register(UserCreateRequest request) {
-        // AQUÍ VA TU LÓGICA DE REGISTRO
-        // Ejemplo rápido:
-        // User user = new User(request.getCedula(), ...);
-        // userRepository.save(user);
-        // return new UserResponse(user);
-        return null; // Cambia esto por tu lógica real
-    }
+    @Autowired
+    private PasswordEncoder passwordEncoder; // <--- ESTA LÍNEA TE FALTABA
 
-    // Método que el controlador está buscando
-    public String getUserRole(String userId) {
-        // AQUÍ VA TU LÓGICA PARA BUSCAR EL ROL EN ORACLE
-        // return userRepository.findById(userId).get().getRole();
-        return "USER"; // Placeholder temporal
-    }
+    public User register(UserCreateRequest request) {
+        // --- DEPURACIÓN: Verifica qué trae el DTO ---
+        System.out.println("DEBUG: Registro recibido: " + request);
+        if (request.getFullName() == null) {
+            System.out.println("ERROR CRÍTICO: El nombre (fullName) recibido es NULL");
+        }
 
+        User user = new User();
+        user.setCedula(request.getCedula());
+        user.setNombre(request.getFullName());
+        user.setCelular(request.getCelular());
+        user.setEmail(request.getEmail());
+        user.setPassword(passwordEncoder.encode(request.getPassword()));
+        user.setRole(request.getRole() != null ? request.getRole() : "USER");
+        user.setActivo("A");
+
+        // --- DEPURACIÓN: Verifica el objeto antes de persistir ---
+        System.out.println("DEBUG: Objeto User a guardar: " + user);
+
+        return userRepository.save(user);
+    }
     public LoginResponse login(LoginRequest request) {
-        // Lógica de login existente
-        return null;
+        // Implementar lógica de login cuando la necesites
+        return new LoginResponse();
+    }
+
+    public String getUserRole(String userId) {
+        return "USER";
     }
 }

@@ -1,16 +1,11 @@
 package com.gidbank.controller;
 
-import com.gidbank.dto.LoginRequest;
-import com.gidbank.dto.LoginResponse;
-import com.gidbank.dto.UserCreateRequest;
-import com.gidbank.dto.UserResponse;
+import com.gidbank.dto.*;
 import com.gidbank.service.AuthService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.Map;
 
 @RestController
@@ -21,16 +16,10 @@ public class AuthController {
     @Autowired
     private AuthService authService;
 
-    @PostMapping("/login")
-    public ResponseEntity<LoginResponse> login(@Valid @RequestBody LoginRequest request) {
-        return ResponseEntity.ok(authService.login(request));
-    }
-
     @PostMapping("/register")
-    public ResponseEntity<UserResponse> register(@Valid @RequestBody UserCreateRequest request) {
-        request.setRole("USER");
-        // ESTA LÍNEA LLAMA AL SERVICIO
-        return new ResponseEntity<>(authService.register(request), HttpStatus.CREATED);
+    public ResponseEntity<?> register(@Valid @RequestBody UserCreateRequest request) {
+        // El servicio recibe el DTO y devuelve la respuesta
+        return ResponseEntity.ok(authService.register(request));
     }
 
     @GetMapping("/me")

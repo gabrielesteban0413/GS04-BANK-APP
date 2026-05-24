@@ -13,13 +13,12 @@ class RegisterViewModel : ViewModel() {
 
     private val repository = AuthRepository()
 
-    // Este es el estado que la Activity observará
     private val _registerResult = MutableLiveData<Result<UserResponse?>>()
     val registerResult: LiveData<Result<UserResponse?>> = _registerResult
 
-    // Solo una función de registro
     fun register(request: RegisterRequest) {
         viewModelScope.launch {
+            // Como el repositorio ya devuelve un Result, solo asignamos el resultado
             val result = repository.register(request)
             _registerResult.value = result
         }
