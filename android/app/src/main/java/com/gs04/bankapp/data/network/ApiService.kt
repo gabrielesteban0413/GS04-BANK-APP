@@ -6,36 +6,19 @@ import retrofit2.http.*
 
 interface ApiService {
 
-    // --- MÓDULO DE AUTENTICACIÓN Y REGISTRO ---
-    @POST("auth/login")
+    // --- MÓDULO DE AUTENTICACIÓN ---
+    // El servidor espera /api/auth/login. Como la base ya tiene /api/, ponemos auth/login
+    @POST("api/auth/login") // Ahora la suma será: BASE_URL + "api/auth/login"
     suspend fun login(@Body request: LoginRequest): Response<LoginResponse>
-    @POST("auth/register")
-    suspend fun createUser(
-        @Header("X-User-Id") adminUserId: String,
-        @Body request: UserCreateRequest
-    ): Response<UserResponse>
-
-    // Este es el endpoint legítimo que probamos en Postman para registrar clientes
-    @POST("auth/register")
-    suspend fun createUser(@Body request: UserCreateRequest): Response<UserResponse>
+    @POST("api/auth/register")
+    suspend fun register(@Body request: RegisterRequest): Response<UserResponse>
 
     @GET("auth/me")
     suspend fun getUserRole(@Header("X-User-Id") userId: String): Response<Map<String, String>>
 
-
-    // --- MÓDULO DE TRANSACCIONES ---
-
-    @POST("transactions/transfer")
-    suspend fun transfer(
-        @Header("X-User-Id") userId: String,
-        @Body request: TransferRequest
-    ): Response<Map<String, String>>
-
-    @GET("transactions")
-    suspend fun getUserTransactions(@Header("X-User-Id") userId: String): Response<List<Any>>
-
-
-    // --- MÓDULO ADMINISTRATIVO / CRUD DE USUARIOS ---
+    // --- MÓDULO ADMINISTRATIVO ---
+    @POST("admin/users")
+    suspend fun createUser(@Header("X-User-Id") adminUserId: String, @Body request: UserCreateRequest): Response<UserResponse>
 
     @GET("admin/users")
     suspend fun getAllUsers(@Header("X-User-Id") adminUserId: String): Response<List<UserResponse>>
@@ -52,4 +35,14 @@ interface ApiService {
         @Header("X-User-Id") adminUserId: String,
         @Path("userId") targetUserId: String
     ): Response<Unit>
+
+    // --- MÓDULO DE TRANSACCIONES ---
+    @POST("transactions/transfer")
+    suspend fun transfer(
+        @Header("X-User-Id") userId: String,
+        @Body request: TransferRequest
+    ): Response<Map<String, String>>
+
+    @GET("transactions")
+    suspend fun getUserTransactions(@Header("X-User-Id") userId: String): Response<List<Any>>
 }

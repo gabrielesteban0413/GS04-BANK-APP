@@ -28,159 +28,98 @@
                 android:layout_marginBottom="8dp"
                 android:src="@drawable/logo_verde" />
 
-            <TextView
-                android:layout_width="wrap_content"
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="CREAR CUENTA"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                android:letterSpacing="0.15"
-                android:textColor="@color/teal_primary"
-                android:layout_marginBottom="32dp" />
+                android:hint="Cédula"
+                android:layout_marginBottom="16dp">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etCedula"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number" />
+            </com.google.android.material.textfield.TextInputLayout>
 
-            <!-- Nombre completo -->
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Nombre completo"
-                android:layout_marginBottom="16dp"
-                app:hintTextColor="@color/teal_primary"
-                app:boxCornerRadiusTopStart="14dp"
-                app:boxCornerRadiusTopEnd="14dp"
-                app:boxCornerRadiusBottomStart="14dp"
-                app:boxCornerRadiusBottomEnd="14dp"
-                app:boxBackgroundColor="@color/pale_aqua_field"
-                app:boxStrokeWidth="0dp"
-                app:boxStrokeWidthFocused="1dp"
-                app:boxStrokeColor="@color/teal_primary">
-
+                android:layout_marginBottom="16dp">
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/etFullName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="textPersonName"
-                    android:textColor="@color/primary_dark"
-                    android:textSize="16sp" />
+                    android:inputType="textPersonName" />
             </com.google.android.material.textfield.TextInputLayout>
 
-            <!-- Correo -->
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Correo electrónico"
-                android:layout_marginBottom="16dp"
-                app:hintTextColor="@color/teal_primary"
-                app:boxCornerRadiusTopStart="14dp"
-                app:boxCornerRadiusTopEnd="14dp"
-                app:boxCornerRadiusBottomStart="14dp"
-                app:boxCornerRadiusBottomEnd="14dp"
-                app:boxBackgroundColor="@color/pale_aqua_field"
-                app:boxStrokeWidth="0dp"
-                app:boxStrokeWidthFocused="1dp"
-                app:boxStrokeColor="@color/teal_primary">
-
+                android:layout_marginBottom="16dp">
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/etEmail"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="textEmailAddress"
-                    android:textColor="@color/primary_dark"
-                    android:textSize="16sp" />
+                    android:inputType="textEmailAddress" />
             </com.google.android.material.textfield.TextInputLayout>
 
-            <!-- Contraseña -->
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Contraseña"
                 android:layout_marginBottom="16dp"
-                app:endIconMode="password_toggle"
-                app:endIconTint="@color/teal_primary"
-                app:hintTextColor="@color/teal_primary"
-                app:boxCornerRadiusTopStart="14dp"
-                app:boxCornerRadiusTopEnd="14dp"
-                app:boxCornerRadiusBottomStart="14dp"
-                app:boxCornerRadiusBottomEnd="14dp"
-                app:boxBackgroundColor="@color/pale_aqua_field"
-                app:boxStrokeWidth="0dp"
-                app:boxStrokeWidthFocused="1dp"
-                app:boxStrokeColor="@color/teal_primary">
-
+                app:endIconMode="password_toggle">
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/etPassword"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="textPassword"
-                    android:textColor="@color/primary_dark"
-                    android:textSize="16sp" />
+                    android:inputType="textPassword" />
             </com.google.android.material.textfield.TextInputLayout>
 
-            <!-- Confirmar contraseña -->
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Confirmar contraseña"
-                android:layout_marginBottom="12dp"
-                app:endIconMode="password_toggle"
-                app:endIconTint="@color/teal_primary"
-                app:hintTextColor="@color/teal_primary"
-                app:boxCornerRadiusTopStart="14dp"
-                app:boxCornerRadiusTopEnd="14dp"
-                app:boxCornerRadiusBottomStart="14dp"
-                app:boxCornerRadiusBottomEnd="14dp"
-                app:boxBackgroundColor="@color/pale_aqua_field"
-                app:boxStrokeWidth="0dp"
-                app:boxStrokeWidthFocused="1dp"
-                app:boxStrokeColor="@color/teal_primary">
-
+                android:layout_marginBottom="16dp"
+                app:endIconMode="password_toggle">
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/etConfirmPassword"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="textPassword"
-                    android:textColor="@color/primary_dark"
-                    android:textSize="16sp" />
+                    android:inputType="textPassword" />
             </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/tvLoginLink"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="¿Ya tienes cuenta? Inicia sesión"
+                android:layout_marginTop="16dp"
+                android:clickable="true"
+                android:focusable="true" />
+            <EditText
+                android:id="@+id/etCelular"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Ingrese su celular"
+                android:inputType="phone" />
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:visibility="gone" />
 
         </LinearLayout>
     </ScrollView>
 
-    <LinearLayout
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnRegister"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:gravity="center">
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btnRegister"
-            android:layout_width="match_parent"
-            android:layout_height="56dp"
-            android:text="REGISTRARME"
-            android:textColor="@android:color/white"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            android:layout_marginTop="16dp"
-            android:backgroundTint="@color/teal_primary"
-            app:cornerRadius="14dp" />
-
-        <TextView
-            android:id="@+id/tvLoginLink"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="¿Ya tienes cuenta? Inicia sesión"
-            android:textColor="@color/text_hint_muted"
-            android:textSize="14sp"
-            android:layout_marginTop="16dp"
-            android:clickable="true"
-            android:focusable="true" />
-
-        <ProgressBar
-            android:id="@+id/progressBar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:visibility="gone" />
-
-    </LinearLayout>
+        android:layout_height="56dp"
+        android:text="REGISTRARME"
+        android:layout_marginTop="16dp" />
 
 </LinearLayout>
