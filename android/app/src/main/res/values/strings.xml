@@ -28,6 +28,24 @@
 
 
 
+    <!-- Dashboard -->
+    <string name="dashboard_date_format">Dom, 24 Mayo 2026</string>
+    <string name="dashboard_welcome">¡Hola, %s!</string>
+    <string name="dashboard_balance_label">Saldo Disponible:</string>
+    <string name="dashboard_expiry_label">Expiry Date</string>
+    <string name="dashboard_cvv_label">CVV</string>
+    <string name="dashboard_send">Enviar</string>
+    <string name="dashboard_receive">Recibir</string>
+    <string name="dashboard_recent_title">Recientes</string>
+    <string name="dashboard_recent_supermarket">Supermercado</string>
+    <string name="dashboard_recent_amount_negative">- $45.000</string>
+    <string name="dashboard_menu_home">Inicio</string>
+    <string name="dashboard_menu_history">Historial</string>
+    <string name="dashboard_menu_profile">Perfil</string>
+    <string name="dashboard_menu_logout">Salir</string>
+    <string name="dashboard_search_desc">Buscar</string>
+
+
 
     <!-- Edit Profile -->
     <string name="edit_profile_title">Editar perfil</string>
@@ -58,8 +76,7 @@
     <string name="terms_section3_title">3. Privacidad y datos</string>
     <string name="terms_section3_text">Sus datos personales serán tratados conforme a nuestra Política de Privacidad. Al usar la aplicación, usted consiente dicha recolección y uso.</string>
     <string name="terms_section4_title">4. Responsabilidad</string>
-    <string name="terms_section4_text">La aplicación se proporciona 'tal cual'. No garantizamos que esté libre de errores o interrupciones. No seremos responsables por daños indirectos derivados del uso de la aplicación.</string>
-    <string name="terms_section5_title">5. Cambios a los términos</string>
+    <string name="terms_section4_text">La aplicacion se proporciona tal cual. No garantizamos que este libre de errores o interrupciones. No seremos responsables por daños indirectos derivados del uso de la aplicacion.</string>    <string name="terms_section5_title">5. Cambios a los términos</string>
     <string name="terms_section5_text">Podemos actualizar estos términos en cualquier momento. Le notificaremos sobre cambios importantes mediante la aplicación o por correo electrónico.</string>
     <string name="terms_section6_title">6. Contacto</string>
     <string name="terms_section6_text">Si tienes preguntas sobre estos términos, contáctanos en soporte@gs04bank.com.</string>
@@ -90,6 +107,8 @@
     <string name="transfer_continue_button">Continuar</string>
     <string name="transfer_change_receiver_description">Cambiar receptor</string>
     <string name="transfer_change_account_description">Cambiar cuenta</string>
+
+
 
 
 
