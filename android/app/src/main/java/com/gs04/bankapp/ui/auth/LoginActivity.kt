@@ -1,6 +1,8 @@
 package com.gs04.bankapp.ui.auth
 
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -8,6 +10,7 @@ import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
+import com.gs04.bankapp.R
 import com.gs04.bankapp.databinding.ActivityLoginBinding
 import com.gs04.bankapp.ui.dashboard.DashboardActivity
 import kotlinx.coroutines.flow.launchIn
