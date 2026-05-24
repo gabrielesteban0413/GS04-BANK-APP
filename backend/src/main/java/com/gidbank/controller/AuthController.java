@@ -16,9 +16,14 @@ public class AuthController {
     @Autowired
     private AuthService authService;
 
+    @PostMapping("/login")
+    public ResponseEntity<?> login(@Valid @RequestBody LoginRequest request) {
+        // Aquí llamas al servicio que tiene la lógica real
+        return ResponseEntity.ok(authService.login(request));
+    }
+
     @PostMapping("/register")
     public ResponseEntity<?> register(@Valid @RequestBody UserCreateRequest request) {
-        // El servicio recibe el DTO y devuelve la respuesta
         return ResponseEntity.ok(authService.register(request));
     }
 
@@ -27,4 +32,5 @@ public class AuthController {
         String role = authService.getUserRole(userId);
         return ResponseEntity.ok(Map.of("role", role));
     }
+    // Fíjate que aquí cierro la llave del método getCurrentUser
 }

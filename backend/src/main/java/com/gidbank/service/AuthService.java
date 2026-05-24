@@ -38,9 +38,38 @@ public class AuthService {
         return userRepository.save(user);
     }
     public LoginResponse login(LoginRequest request) {
-        // Implementar lógica de login cuando la necesites
-        return new LoginResponse();
+        User user = userRepository.findByEmail(request.getEmail()).orElse(null);
+
+        if (user == null) {
+            throw new RuntimeException("Usuario no encontrado");
+        }
+
+        if (passwordEncoder.matches(request.getPassword(), user.getPassword())) {
+            LoginResponse response = new LoginResponse();
+            response.setMessage("Bienvenida");
+            response.setToken("Token-de-ejemplo");
+
+            // 1. Usamos String.valueOf para el ID (Long a String)
+            response.setUserId(String.valueOf(user.getId()));
+
+            // 2. Usamos getNombre() porque en tu entidad se llama "nombre"
+            response.setFullName(user.getNombre());
+
+            response.setRole(user.getRole());
+
+            // 3. Convertimos el BigDecimal de la base de datos a Double
+            if (user.getBalance() != null) {
+                response.setBalance(user.getBalance().doubleValue());
+            } else {
+                response.setBalance(0.0);
+            }
+
+            return response;
+        } else {
+            throw new RuntimeException("Contraseña incorrecta");
+        }
     }
+
 
     public String getUserRole(String userId) {
         return "USER";

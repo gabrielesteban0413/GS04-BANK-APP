@@ -8,10 +8,9 @@ interface ApiService {
 
     // --- MÓDULO DE AUTENTICACIÓN ---
     // El servidor espera /api/auth/login. Como la base ya tiene /api/, ponemos auth/login
-    @POST("auth/login")
+    @POST("api/auth/login") // Ahora la suma será: BASE_URL + "api/auth/login"
     suspend fun login(@Body request: LoginRequest): Response<LoginResponse>
-
-    @POST("auth/register")
+    @POST("api/auth/register")
     suspend fun register(@Body request: RegisterRequest): Response<UserResponse>
 
     @GET("auth/me")

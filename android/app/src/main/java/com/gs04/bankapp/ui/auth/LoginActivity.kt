@@ -61,8 +61,17 @@ class LoginActivity : AppCompatActivity() {
                 is LoginViewModel.LoginUiState.Success -> {
                     binding.progressBar.visibility = View.GONE
                     binding.btnLogin.isEnabled = true
-                    // Navegación exitosa
-                    startActivity(Intent(this, DashboardActivity::class.java))
+
+                    // AQUÍ ES DONDE NAVEGAMOS ENVIANDO LOS DATOS
+                    val loginResponse = state.data // Asegúrate de tener acceso a los datos del éxito
+
+                    val intent = Intent(this, DashboardActivity::class.java).apply {
+                        putExtra("userId", loginResponse.userId)
+                        putExtra("fullName", loginResponse.fullName)
+                        putExtra("balance", loginResponse.balance)
+                        putExtra("role", loginResponse.role)
+                    }
+                    startActivity(intent)
                     finish()
                 }
                 is LoginViewModel.LoginUiState.Error -> {

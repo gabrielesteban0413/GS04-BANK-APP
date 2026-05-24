@@ -1,35 +1,82 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="24dp">
+    android:background="#F5F7FA"
+    android:padding="20dp">
 
     <TextView
         android:id="@+id/tvWelcome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="24sp"
-        android:textStyle="bold" />
+        android:text="¡Hola, Daniela!"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:textColor="#1A237E"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
 
-    <TextView
-        android:id="@+id/tvBalance"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="20sp"
-        android:layout_marginTop="16dp" />
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardBalance"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:layout_marginTop="30dp"
+        app:cardCornerRadius="24dp"
+        app:cardElevation="8dp"
+        app:cardBackgroundColor="#1A237E"
+        app:layout_constraintTop_toBottomOf="@id/tvWelcome">
 
-    <Button
-        android:id="@+id/btnTransfer"
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tu saldo disponible"
+                android:textColor="#B3FFFFFF"
+                android:textSize="14sp"/>
+
+            <TextView
+                android:id="@+id/tvBalance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="$ 5.250.000"
+                android:textColor="#FFFFFF"
+                android:textSize="32sp"
+                android:textStyle="bold"
+                android:layout_marginTop="8dp"/>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <LinearLayout
+        android:id="@+id/llActions"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hacer transferencia"
-        android:layout_marginTop="32dp" />
+        android:layout_marginTop="40dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/cardBalance">
 
-    <Button
-        android:id="@+id/btnAdmin"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Administrar usuarios"
-        android:visibility="gone" />
-</LinearLayout>
+        <Button
+            android:id="@+id/btnTransfer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Enviar Dinero"
+            android:backgroundTint="#FF4081"
+            android:layout_marginEnd="15dp"/>
+
+        <Button
+            android:id="@+id/btnAdmin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Administrar"
+            android:backgroundTint="#607D8B"
+            android:visibility="gone"/>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
