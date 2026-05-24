@@ -44,6 +44,8 @@
     <string name="dashboard_menu_profile">Perfil</string>
     <string name="dashboard_menu_logout">Salir</string>
     <string name="dashboard_search_desc">Buscar</string>
+    <string name="dashboard_cards">Mis Tarjetas</string>
+    <string name="dashboard_stats">Estadísticas</string>
 
 
 
@@ -107,6 +109,59 @@
     <string name="transfer_continue_button">Continuar</string>
     <string name="transfer_change_receiver_description">Cambiar receptor</string>
     <string name="transfer_change_account_description">Cambiar cuenta</string>
+
+
+
+    <!-- Mis Tarjetas -->
+    <string name="my_cards_title">Mis Tarjetas</string>
+    <string name="card_number_hint">**** **** **** ****</string>
+    <string name="card_holder_name">AR Jonson</string>
+    <string name="expiry_label">Fecha expiración</string>
+    <string name="cvv_label">CVV</string>
+    <string name="apple_store">Apple Store</string>
+    <string name="entertainment">Entretenimiento</string>
+    <string name="spotify">Spotify</string>
+    <string name="music">Música</string>
+    <string name="grocery">Grocery</string>
+    <string name="shopping">Shopping</string>
+    <string name="monthly_spending_limit">Límite de gasto mensual</string>
+    <string name="amount_prefix">Monto: $</string>
+    <string name="currency_symbol">$</string>
+
+
+    <!-- Mis Tarjetas CRUD -->
+    <string name="add_card">Agregar tarjeta</string>
+    <string name="edit_card">Editar tarjeta</string>
+    <string name="delete_card">Eliminar tarjeta</string>
+    <string name="card_holder">Titular</string>
+    <string name="card_number">Número de tarjeta</string>
+    <string name="expiry_date">Fecha expiración</string>
+    <string name="cvv">CVV</string>
+    <string name="save">Guardar</string>
+    <string name="cancel">Cancelar</string>
+    <string name="confirm_delete">¿Eliminar esta tarjeta?</string>
+    <string name="yes">Sí</string>
+    <string name="no">No</string>
+    <string name="no_cards">No tienes tarjetas agregadas</string>
+    <string name="all_cards_title">Todas las tarjetas</string>
+    <string name="all_cards_subtitle">Administra todas tus tarjetas</string>
+
+    <string name="manage_cards_subtitle">Administra tus tarjetas</string>
+    <string name="view_all_cards">Ver todas las tarjetas</string>
+    <string name="edit_cards">Editar tarjetas</string>
+
+
+
+
+    <!-- Estadísticas -->
+    <string name="current_balance">Saldo actual</string>
+    <string name="money_transfer">Transferencia de dinero</string>
+    <string name="transaction_category">Transacción</string>
+    <string name="settings">Ajustes</string>
+    <string name="statistics_title">Estadísticas</string>
+    <string name="statistics_subtitle">Resumen de tus movimientos</string>
+    <string name="transactions_title">Transacciones</string>
+
 
 
 

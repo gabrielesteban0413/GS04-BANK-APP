@@ -204,29 +204,29 @@
                     </LinearLayout>
                 </LinearLayout>
 
-                <!-- Botones Enviar / Recibir -->
+                <!-- Botones de acción (Enviar, Recibir, Tarjetas, Estadísticas) -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="24dp"
-                    android:gravity="center"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:weightSum="4">
 
                     <LinearLayout
                         android:id="@+id/btnSend"
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_margin="10dp"
+                        android:layout_weight="1"
                         android:gravity="center"
                         android:orientation="vertical"
                         android:clickable="true"
                         android:focusable="true">
 
                         <ImageView
-                            android:layout_width="65dp"
-                            android:layout_height="65dp"
+                            android:layout_width="55dp"
+                            android:layout_height="55dp"
                             android:background="@drawable/bg_circle_primary_light"
-                            android:padding="18dp"
+                            android:padding="15dp"
                             android:src="@drawable/ic_send"
                             android:contentDescription="@string/dashboard_send" />
 
@@ -236,24 +236,24 @@
                             android:layout_marginTop="8dp"
                             android:text="@string/dashboard_send"
                             android:textColor="@color/primary_dark"
-                            android:textSize="16sp" />
+                            android:textSize="14sp" />
                     </LinearLayout>
 
                     <LinearLayout
                         android:id="@+id/btnReceive"
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_margin="10dp"
+                        android:layout_weight="1"
                         android:gravity="center"
                         android:orientation="vertical"
                         android:clickable="true"
                         android:focusable="true">
 
                         <ImageView
-                            android:layout_width="65dp"
-                            android:layout_height="65dp"
+                            android:layout_width="55dp"
+                            android:layout_height="55dp"
                             android:background="@drawable/bg_circle_primary_light"
-                            android:padding="18dp"
+                            android:padding="15dp"
                             android:src="@drawable/ic_receive"
                             android:contentDescription="@string/dashboard_receive" />
 
@@ -263,7 +263,61 @@
                             android:layout_marginTop="8dp"
                             android:text="@string/dashboard_receive"
                             android:textColor="@color/primary_dark"
-                            android:textSize="16sp" />
+                            android:textSize="14sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/btnCards"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:clickable="true"
+                        android:focusable="true">
+
+                        <ImageView
+                            android:layout_width="55dp"
+                            android:layout_height="55dp"
+                            android:background="@drawable/bg_circle_primary_light"
+                            android:padding="15dp"
+                            android:src="@drawable/ic_cards"
+                            android:contentDescription="@string/dashboard_cards" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="@string/dashboard_cards"
+                            android:textColor="@color/primary_dark"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/btnStats"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:clickable="true"
+                        android:focusable="true">
+
+                        <ImageView
+                            android:layout_width="55dp"
+                            android:layout_height="55dp"
+                            android:background="@drawable/bg_circle_primary_light"
+                            android:padding="15dp"
+                            android:src="@drawable/ic_stats"
+                            android:contentDescription="@string/dashboard_stats" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="@string/dashboard_stats"
+                            android:textColor="@color/primary_dark"
+                            android:textSize="14sp" />
                     </LinearLayout>
                 </LinearLayout>
 
@@ -325,6 +379,7 @@
                         android:textSize="18sp"
                         android:textStyle="bold" />
                 </LinearLayout>
+
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
