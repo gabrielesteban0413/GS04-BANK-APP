@@ -64,4 +64,13 @@ dependencies {
     implementation(platform("io.github.jan-tennert.supabase:bom:2.2.3"))
     implementation("io.github.jan-tennert.supabase:gotrue-kt")
     implementation("io.github.jan-tennert.supabase:postgrest-kt")
+
+
+
+
+    // CardView (por si acaso)
+    implementation("androidx.cardview:cardview:1.0.0")
+
+
+
 }
