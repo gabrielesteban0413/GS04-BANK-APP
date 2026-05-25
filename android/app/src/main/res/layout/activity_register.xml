@@ -5,41 +5,43 @@
     android:layout_height="match_parent"
     android:background="@color/bg_app_light">
 
+    <!-- Círculos decorativos -->
     <View
         android:layout_width="280dp"
         android:layout_height="280dp"
         android:layout_alignParentEnd="true"
         android:layout_marginTop="-120dp"
         android:layout_marginEnd="-100dp"
-        android:background="@drawable/bg_circle_primary_light"
-        android:alpha="0.3" />
+        android:alpha="0.3"
+        android:background="@drawable/bg_circle_primary_light" />
 
     <View
         android:layout_width="220dp"
         android:layout_height="220dp"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="-80dp"
         android:layout_marginStart="-80dp"
-        android:background="@drawable/bg_circle_secondary_light"
-        android:alpha="0.35" />
+        android:layout_marginBottom="-80dp"
+        android:alpha="0.35"
+        android:background="@drawable/bg_circle_secondary_light" />
 
     <View
         android:layout_width="180dp"
         android:layout_height="180dp"
-        android:layout_centerVertical="true"
         android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
         android:layout_marginEnd="-60dp"
-        android:background="@drawable/bg_circle_primary_light"
-        android:alpha="0.2" />
+        android:alpha="0.2"
+        android:background="@drawable/bg_circle_primary_light" />
 
     <View
         android:layout_width="120dp"
         android:layout_height="120dp"
-        android:layout_marginTop="100dp"
         android:layout_marginStart="-40dp"
-        android:background="@drawable/bg_circle_secondary_light"
-        android:alpha="0.25" />
+        android:layout_marginTop="100dp"
+        android:alpha="0.25"
+        android:background="@drawable/bg_circle_secondary_light" />
 
+    <!-- Contenido principal -->
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -49,51 +51,55 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
             android:orientation="vertical"
-            android:padding="32dp"
-            android:gravity="center_horizontal">
+            android:padding="32dp">
 
+            <!-- Logo -->
             <ImageView
                 android:id="@+id/logo"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_marginTop="30dp"
                 android:layout_marginBottom="8dp"
-                android:src="@drawable/logo_verde"
-                android:contentDescription="@string/logo_description" />
+                android:contentDescription="@string/logo_description"
+                android:src="@drawable/logo_verde" />
 
+            <!-- Título -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
                 android:text="@string/register_title"
-                android:textSize="24sp"
-                android:textStyle="bold"
                 android:textColor="@color/primary"
-                android:layout_marginBottom="8dp" />
+                android:textSize="24sp"
+                android:textStyle="bold" />
 
+            <!-- Subtítulo -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="32dp"
                 android:text="@string/register_subtitle"
-                android:textSize="14sp"
                 android:textColor="@color/text_hint_muted"
-                android:layout_marginBottom="32dp" />
+                android:textSize="14sp" />
 
+            <!-- Cédula -->
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/cedula_hint"
                 android:layout_marginBottom="16dp"
-                app:hintTextColor="@color/primary"
-                app:boxCornerRadiusTopStart="16dp"
-                app:boxCornerRadiusTopEnd="16dp"
-                app:boxCornerRadiusBottomStart="16dp"
-                app:boxCornerRadiusBottomEnd="16dp"
+                android:hint="@string/cedula_hint"
                 app:boxBackgroundColor="@color/pale_aqua_field"
+                app:boxCornerRadiusBottomEnd="16dp"
+                app:boxCornerRadiusBottomStart="16dp"
+                app:boxCornerRadiusTopEnd="16dp"
+                app:boxCornerRadiusTopStart="16dp"
+                app:boxStrokeColor="@color/primary"
                 app:boxStrokeWidth="0dp"
                 app:boxStrokeWidthFocused="1dp"
-                app:boxStrokeColor="@color/primary"
-                app:endIconMode="clear_text">
+                app:endIconMode="clear_text"
+                app:hintTextColor="@color/primary">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/etCedula"
@@ -102,23 +108,25 @@
                     android:inputType="number"
                     android:textColor="@color/primary_dark"
                     android:textSize="16sp" />
+
             </com.google.android.material.textfield.TextInputLayout>
 
+            <!-- Nombre -->
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/fullname_hint"
                 android:layout_marginBottom="16dp"
-                app:hintTextColor="@color/primary"
-                app:boxCornerRadiusTopStart="16dp"
-                app:boxCornerRadiusTopEnd="16dp"
-                app:boxCornerRadiusBottomStart="16dp"
-                app:boxCornerRadiusBottomEnd="16dp"
+                android:hint="@string/fullname_hint"
                 app:boxBackgroundColor="@color/pale_aqua_field"
+                app:boxCornerRadiusBottomEnd="16dp"
+                app:boxCornerRadiusBottomStart="16dp"
+                app:boxCornerRadiusTopEnd="16dp"
+                app:boxCornerRadiusTopStart="16dp"
+                app:boxStrokeColor="@color/primary"
                 app:boxStrokeWidth="0dp"
                 app:boxStrokeWidthFocused="1dp"
-                app:boxStrokeColor="@color/primary"
-                app:endIconMode="clear_text">
+                app:endIconMode="clear_text"
+                app:hintTextColor="@color/primary">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/etFullName"
@@ -127,23 +135,25 @@
                     android:inputType="textPersonName"
                     android:textColor="@color/primary_dark"
                     android:textSize="16sp" />
+
             </com.google.android.material.textfield.TextInputLayout>
 
+            <!-- Correo -->
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/email_hint"
                 android:layout_marginBottom="16dp"
-                app:hintTextColor="@color/primary"
-                app:boxCornerRadiusTopStart="16dp"
-                app:boxCornerRadiusTopEnd="16dp"
-                app:boxCornerRadiusBottomStart="16dp"
-                app:boxCornerRadiusBottomEnd="16dp"
+                android:hint="@string/email_hint"
                 app:boxBackgroundColor="@color/pale_aqua_field"
+                app:boxCornerRadiusBottomEnd="16dp"
+                app:boxCornerRadiusBottomStart="16dp"
+                app:boxCornerRadiusTopEnd="16dp"
+                app:boxCornerRadiusTopStart="16dp"
+                app:boxStrokeColor="@color/primary"
                 app:boxStrokeWidth="0dp"
                 app:boxStrokeWidthFocused="1dp"
-                app:boxStrokeColor="@color/primary"
-                app:endIconMode="clear_text">
+                app:endIconMode="clear_text"
+                app:hintTextColor="@color/primary">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/etEmail"
@@ -152,23 +162,25 @@
                     android:inputType="textEmailAddress"
                     android:textColor="@color/primary_dark"
                     android:textSize="16sp" />
+
             </com.google.android.material.textfield.TextInputLayout>
 
+            <!-- Celular -->
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/celular_hint"
                 android:layout_marginBottom="16dp"
-                app:hintTextColor="@color/primary"
-                app:boxCornerRadiusTopStart="16dp"
-                app:boxCornerRadiusTopEnd="16dp"
-                app:boxCornerRadiusBottomStart="16dp"
-                app:boxCornerRadiusBottomEnd="16dp"
+                android:hint="@string/celular_hint"
                 app:boxBackgroundColor="@color/pale_aqua_field"
+                app:boxCornerRadiusBottomEnd="16dp"
+                app:boxCornerRadiusBottomStart="16dp"
+                app:boxCornerRadiusTopEnd="16dp"
+                app:boxCornerRadiusTopStart="16dp"
+                app:boxStrokeColor="@color/primary"
                 app:boxStrokeWidth="0dp"
                 app:boxStrokeWidthFocused="1dp"
-                app:boxStrokeColor="@color/primary"
-                app:endIconMode="clear_text">
+                app:endIconMode="clear_text"
+                app:hintTextColor="@color/primary">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/etCelular"
@@ -177,24 +189,27 @@
                     android:inputType="phone"
                     android:textColor="@color/primary_dark"
                     android:textSize="16sp" />
+
             </com.google.android.material.textfield.TextInputLayout>
 
+            <!-- Contraseña -->
             <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/password_hint"
                 android:layout_marginBottom="16dp"
-                app:endIconMode="password_toggle"
-                app:endIconTint="@color/primary"
-                app:hintTextColor="@color/primary"
-                app:boxCornerRadiusTopStart="16dp"
-                app:boxCornerRadiusTopEnd="16dp"
-                app:boxCornerRadiusBottomStart="16dp"
-                app:boxCornerRadiusBottomEnd="16dp"
+                android:hint="@string/password_hint"
                 app:boxBackgroundColor="@color/pale_aqua_field"
+                app:boxCornerRadiusBottomEnd="16dp"
+                app:boxCornerRadiusBottomStart="16dp"
+                app:boxCornerRadiusTopEnd="16dp"
+                app:boxCornerRadiusTopStart="16dp"
+                app:boxStrokeColor="@color/primary"
                 app:boxStrokeWidth="0dp"
                 app:boxStrokeWidthFocused="1dp"
-                app:boxStrokeColor="@color/primary">
+                app:endIconMode="password_toggle"
+                app:endIconTint="@color/primary"
+                app:hintTextColor="@color/primary">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/etPassword"
@@ -203,24 +218,26 @@
                     android:inputType="textPassword"
                     android:textColor="@color/primary_dark"
                     android:textSize="16sp" />
+
             </com.google.android.material.textfield.TextInputLayout>
 
+            <!-- Confirmar contraseña -->
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/confirm_password_hint"
                 android:layout_marginBottom="24dp"
-                app:endIconMode="password_toggle"
-                app:endIconTint="@color/primary"
-                app:hintTextColor="@color/primary"
-                app:boxCornerRadiusTopStart="16dp"
-                app:boxCornerRadiusTopEnd="16dp"
-                app:boxCornerRadiusBottomStart="16dp"
-                app:boxCornerRadiusBottomEnd="16dp"
+                android:hint="@string/confirm_password_hint"
                 app:boxBackgroundColor="@color/pale_aqua_field"
+                app:boxCornerRadiusBottomEnd="16dp"
+                app:boxCornerRadiusBottomStart="16dp"
+                app:boxCornerRadiusTopEnd="16dp"
+                app:boxCornerRadiusTopStart="16dp"
+                app:boxStrokeColor="@color/primary"
                 app:boxStrokeWidth="0dp"
                 app:boxStrokeWidthFocused="1dp"
-                app:boxStrokeColor="@color/primary">
+                app:endIconMode="password_toggle"
+                app:endIconTint="@color/primary"
+                app:hintTextColor="@color/primary">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/etConfirmPassword"
@@ -229,32 +246,36 @@
                     android:inputType="textPassword"
                     android:textColor="@color/primary_dark"
                     android:textSize="16sp" />
+
             </com.google.android.material.textfield.TextInputLayout>
 
+            <!-- Botón registrar -->
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnRegister"
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
+                android:layout_marginBottom="16dp"
+                android:backgroundTint="@color/primary"
                 android:text="@string/register_button"
                 android:textColor="#FFFFFF"
                 android:textSize="16sp"
                 android:textStyle="bold"
-                android:backgroundTint="@color/primary"
-                app:cornerRadius="28dp"
-                android:layout_marginBottom="16dp" />
+                app:cornerRadius="28dp" />
 
+            <!-- Link login -->
             <TextView
                 android:id="@+id/tvLoginLink"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:padding="8dp"
                 android:text="@string/login_account_link"
                 android:textColor="@color/primary"
-                android:textSize="14sp"
-                android:layout_marginTop="8dp"
-                android:padding="8dp"
-                android:clickable="true"
-                android:focusable="true" />
+                android:textSize="14sp" />
 
+            <!-- Progress -->
             <ProgressBar
                 android:id="@+id/progressBar"
                 android:layout_width="wrap_content"
@@ -263,5 +284,7 @@
                 android:visibility="gone" />
 
         </LinearLayout>
+
     </ScrollView>
+
 </RelativeLayout>

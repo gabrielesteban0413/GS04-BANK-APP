@@ -28,26 +28,6 @@
 
 
 
-    <!-- Dashboard -->
-    <string name="dashboard_date_format">Dom, 24 Mayo 2026</string>
-    <string name="dashboard_welcome">¡Hola, %s!</string>
-    <string name="dashboard_balance_label">Saldo Disponible:</string>
-    <string name="dashboard_expiry_label">Expiry Date</string>
-    <string name="dashboard_cvv_label">CVV</string>
-    <string name="dashboard_send">Enviar</string>
-    <string name="dashboard_receive">Recibir</string>
-    <string name="dashboard_recent_title">Recientes</string>
-    <string name="dashboard_recent_supermarket">Supermercado</string>
-    <string name="dashboard_recent_amount_negative">- $45.000</string>
-    <string name="dashboard_menu_home">Inicio</string>
-    <string name="dashboard_menu_history">Historial</string>
-    <string name="dashboard_menu_profile">Perfil</string>
-    <string name="dashboard_menu_logout">Salir</string>
-    <string name="dashboard_search_desc">Buscar</string>
-    <string name="dashboard_cards">Mis Tarjetas</string>
-    <string name="dashboard_stats">Estadísticas</string>
-
-
 
     <!-- Edit Profile -->
     <string name="edit_profile_title">Editar perfil</string>
@@ -78,7 +58,8 @@
     <string name="terms_section3_title">3. Privacidad y datos</string>
     <string name="terms_section3_text">Sus datos personales serán tratados conforme a nuestra Política de Privacidad. Al usar la aplicación, usted consiente dicha recolección y uso.</string>
     <string name="terms_section4_title">4. Responsabilidad</string>
-    <string name="terms_section4_text">La aplicacion se proporciona tal cual. No garantizamos que este libre de errores o interrupciones. No seremos responsables por daños indirectos derivados del uso de la aplicacion.</string>    <string name="terms_section5_title">5. Cambios a los términos</string>
+    <string name="terms_section4_text">La aplicación se proporciona \'tal cual\'. No garantizamos que esté libre de errores o interrupciones. No seremos responsables por daños indirectos derivados del uso de la aplicación.</string>
+    <string name="terms_section5_title">5. Cambios a los términos</string>
     <string name="terms_section5_text">Podemos actualizar estos términos en cualquier momento. Le notificaremos sobre cambios importantes mediante la aplicación o por correo electrónico.</string>
     <string name="terms_section6_title">6. Contacto</string>
     <string name="terms_section6_text">Si tienes preguntas sobre estos términos, contáctanos en soporte@gs04bank.com.</string>
@@ -110,61 +91,58 @@
     <string name="transfer_change_receiver_description">Cambiar receptor</string>
     <string name="transfer_change_account_description">Cambiar cuenta</string>
 
+    <string name="dashboard_search_desc">Buscar transacciones</string>
+    <string name="dashboard_date_format">dd/MM/yyyy</string>
+    <string name="dashboard_balance_label">Saldo Disponible</string>
+    <string name="dashboard_expiry_label">Expira</string>
+    <string name="dashboard_cvv_label">CVV</string>
+    <string name="dashboard_send">Enviar</string>
+    <string name="dashboard_receive">Recibir</string>
+    <string name="dashboard_recent_title">Movimientos Recientes</string>
+    <string name="dashboard_recent_supermarket">Supermercado</string>
+    <string name="dashboard_recent_amount_negative">-$50.00</string>
+    <string name="dashboard_menu_home">Inicio</string>
+    <string name="dashboard_menu_history">Historial</string>
+    <string name="dashboard_menu_profile">Perfil</string>
+    <string name="dashboard_menu_logout">Cerrar Sesión</string>
 
 
-    <!-- Mis Tarjetas -->
+    <!-- All Cards Activity -->
+    <string name="all_cards_title">Mis Tarjetas</string>
+    <string name="all_cards_subtitle">Todas tus tarjetas en un solo lugar</string>
+    <string name="no_cards">No tienes tarjetas asociadas</string>
     <string name="my_cards_title">Mis Tarjetas</string>
-    <string name="card_number_hint">**** **** **** ****</string>
-    <string name="card_holder_name">AR Jonson</string>
-    <string name="expiry_label">Fecha expiración</string>
-    <string name="cvv_label">CVV</string>
+    <string name="statistics_title">Estadísticas</string>
+    <string name="view_all_cards">Ver todas</string>
+    <string name="monthly_spending_limit">Límite de gasto mensual</string>
+
+    <!-- Forgot Password Activity -->
+    <string name="forgot_password_title">¿Olvidaste tu contraseña?</string>
+    <string name="forgot_password_subtitle">Ingresa tu cédula o correo y te enviaremos instrucciones</string>
+    <string name="cedula_or_email_hint">Cédula o correo electrónico</string>
+    <string name="send_instructions_button">Enviar instrucciones</string>
+    <string name="back_to_login">Volver al inicio de sesión</string>
+
+    <!-- My Cards Activity -->
+    <string name="edit_cards">Editar</string>
+    <string name="manage_cards_subtitle">Gestiona tus tarjetas bancarias</string>
+
+
+    <!-- Statistics Activity -->
+    <string name="statistics_subtitle">Estadísticas de gastos</string>
+    <string name="current_balance">Saldo actual</string>
+    <string name="transactions_title">Transacciones recientes</string>
     <string name="apple_store">Apple Store</string>
     <string name="entertainment">Entretenimiento</string>
     <string name="spotify">Spotify</string>
     <string name="music">Música</string>
-    <string name="grocery">Grocery</string>
-    <string name="shopping">Shopping</string>
-    <string name="monthly_spending_limit">Límite de gasto mensual</string>
-    <string name="amount_prefix">Monto: $</string>
-    <string name="currency_symbol">$</string>
-
-
-    <!-- Mis Tarjetas CRUD -->
-    <string name="add_card">Agregar tarjeta</string>
-    <string name="edit_card">Editar tarjeta</string>
-    <string name="delete_card">Eliminar tarjeta</string>
-    <string name="card_holder">Titular</string>
-    <string name="card_number">Número de tarjeta</string>
-    <string name="expiry_date">Fecha expiración</string>
-    <string name="cvv">CVV</string>
-    <string name="save">Guardar</string>
-    <string name="cancel">Cancelar</string>
-    <string name="confirm_delete">¿Eliminar esta tarjeta?</string>
-    <string name="yes">Sí</string>
-    <string name="no">No</string>
-    <string name="no_cards">No tienes tarjetas agregadas</string>
-    <string name="all_cards_title">Todas las tarjetas</string>
-    <string name="all_cards_subtitle">Administra todas tus tarjetas</string>
-
-    <string name="manage_cards_subtitle">Administra tus tarjetas</string>
-    <string name="view_all_cards">Ver todas las tarjetas</string>
-    <string name="edit_cards">Editar tarjetas</string>
-
-
-
-
-    <!-- Estadísticas -->
-    <string name="current_balance">Saldo actual</string>
     <string name="money_transfer">Transferencia de dinero</string>
-    <string name="transaction_category">Transacción</string>
-    <string name="settings">Ajustes</string>
-    <string name="statistics_title">Estadísticas</string>
-    <string name="statistics_subtitle">Resumen de tus movimientos</string>
-    <string name="transactions_title">Transacciones</string>
+    <string name="transaction_category">Categoría</string>
 
-
-
-
-
+    <!-- Card items -->
+    <string name="expiry_label">Vence:</string>
+    <string name="cvv_label">CVV:</string>
+    <string name="delete_card">Eliminar tarjeta</string>
 
 </resources>
+
