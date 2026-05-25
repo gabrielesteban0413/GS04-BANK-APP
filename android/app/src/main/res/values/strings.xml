@@ -27,6 +27,9 @@
     <string name="logo_description">Logo</string>
 
 
+    <string name="dashboard_cards">Mis Tarjetas</string>
+    <string name="dashboard_stats">Estadísticas</string>
+
 
 
     <!-- Edit Profile -->

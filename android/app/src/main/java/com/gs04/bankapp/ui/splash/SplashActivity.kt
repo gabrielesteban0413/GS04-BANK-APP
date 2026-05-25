@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import androidx.appcompat.app.AppCompatActivity
+import com.gs04.bankapp.R
 import com.gs04.bankapp.ui.auth.LoginActivity
 
 class SplashActivity : AppCompatActivity() {
@@ -12,10 +13,9 @@ class SplashActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
 
-        // Retraso de 2 segundos antes de pasar a LoginActivity
         Handler(Looper.getMainLooper()).postDelayed({
             startActivity(Intent(this, LoginActivity::class.java))
             finish()
-        }, 2000)
+        }, 2000) // 2 segundos
     }
 }

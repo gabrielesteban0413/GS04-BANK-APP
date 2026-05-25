@@ -4,6 +4,43 @@
     android:layout_height="match_parent"
     android:background="#036b82">
 
+    <!-- Círculos decorativos -->
+    <View
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_marginTop="-100dp"
+        android:layout_marginStart="-100dp"
+        android:background="@drawable/bg_circle_primary_light"
+        android:alpha="0.3" />
+
+    <View
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="200dp"
+        android:layout_marginEnd="-80dp"
+        android:background="@drawable/bg_circle_secondary_light"
+        android:alpha="0.4" />
+
+    <View
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="50dp"
+        android:layout_marginStart="20dp"
+        android:background="@drawable/bg_circle_primary_light"
+        android:alpha="0.2" />
+
+    <!-- Imagen central (usa un drawable existente) -->
+    <ImageView
+        android:id="@+id/ivLogo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:src="@drawable/logo"
+        android:contentDescription="Logo" />
+
+    <!-- ProgressBar al pie -->
     <ProgressBar
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
