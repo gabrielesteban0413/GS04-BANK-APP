@@ -18,26 +18,22 @@ class LoginViewModel : ViewModel() {
     private val _uiState = MutableStateFlow<LoginUiState>(LoginUiState.Idle)
     val uiState: StateFlow<LoginUiState> = _uiState.asStateFlow()
 
-    fun login(email: String, password: String) {
+    fun login(cedula: String, password: String) {
         viewModelScope.launch {
             _uiState.value = LoginUiState.Loading
 
-            val request = LoginRequest(email = email, password = password)
+            // Enviamos la cédula como "email" porque tu DTO (LoginRequest)
+            // probablemente espera el nombre de campo "email"
+            val request = LoginRequest(email = cedula, password = password)
             val result = authRepository.login(request)
-
-            // Manejo del resultado
             val data = result.getOrNull()
 
             if (data != null) {
                 _uiState.value = LoginUiState.Success(data)
             } else {
-                // El servidor envía un JSON complejo, pero solo queremos mostrar el error.
-                // Si quieres algo amigable, podrías hacer algo así:
-                _uiState.value = LoginUiState.Error("Correo o contraseña incorrectos")
-
-                // O si prefieres mostrar lo que viene del servidor,
-                // tendrías que usar una librería como Gson para "parsear" ese JSON
-                // y extraer solo el campo "error".
+                // Mensaje coherente con la cédula
+                Log.e("LOGIN_DEBUG", "Error en login: ${result.exceptionOrNull()?.message}")
+                _uiState.value = LoginUiState.Error("Error: ${result.exceptionOrNull()?.message ?: "Cédula o contraseña incorrectos"}")
             }
         }
     }
