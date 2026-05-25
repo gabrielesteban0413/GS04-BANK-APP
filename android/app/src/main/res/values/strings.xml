@@ -127,4 +127,22 @@
     <string name="edit_cards">Editar</string>
     <string name="manage_cards_subtitle">Gestiona tus tarjetas bancarias</string>
 
+
+    <!-- Statistics Activity -->
+    <string name="statistics_subtitle">Estadísticas de gastos</string>
+    <string name="current_balance">Saldo actual</string>
+    <string name="transactions_title">Transacciones recientes</string>
+    <string name="apple_store">Apple Store</string>
+    <string name="entertainment">Entretenimiento</string>
+    <string name="spotify">Spotify</string>
+    <string name="music">Música</string>
+    <string name="money_transfer">Transferencia de dinero</string>
+    <string name="transaction_category">Categoría</string>
+
+    <!-- Card items -->
+    <string name="expiry_label">Vence:</string>
+    <string name="cvv_label">CVV:</string>
+    <string name="delete_card">Eliminar tarjeta</string>
+
 </resources>
+
