@@ -1,45 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <color name="teal_primary">#008080</color>
-    <color name="aqua_accent">#00FFFF</color>
+    <!-- Paleta principal (nueva identidad) -->
+    <color name="primary">#048ba8</color>
+    <color name="primary_dark">#036b82</color>
+    <color name="secondary">#e1f101</color>
+    <color name="secondary_dark">#c5d400</color>
 
-    <color name="text_dark_navy">#0A1F1F</color>
+    <!-- Fondos y superficies -->
+    <color name="bg_app_light">#D1EBE6</color>
+    <color name="pale_aqua_field">#E0F2F5</color>
+    <color name="white">#FFFFFF</color>
 
-    <color name="black">#000000</color>
+    <!-- Textos y estados -->
+    <color name="text_hint_muted">#9E9E9E</color>
     <color name="error_red">#EF4444</color>
 
-    <color name="gray_medium">#7A9A95</color>
-    <color name="primary_blue">#008080</color>
-
-    <color name="secondary_g">#00FFFF</color>
-    <color name="gray_dark">#333333</color>
-    <color name="secondary_grey">#7A9A95</color>
-    <color name="secondary_green">#00FFFF</color>
-    <color name="secondary_g_">#00FFFF</color>
-    <color name="secondary_grey_">#7A9A95</color>
-    <color name="secondary_green_">#00FFFF</color>
-
-    <color name="secondary_gold">#00FFFF</color>
-    <color name="secondary_gold_dark">#008080</color>
-
-
-
-        <!-- Colores base -->
-        <color name="primary">#048ba8</color>
-        <color name="primary_dark">#036b82</color>
-        <color name="secondary">#e1f101</color>
-        <color name="secondary_dark">#c5d400</color>
-        <color name="bg_app_light">#D1EBE6</color>
-        <color name="text_hint_muted">#9E9E9E</color>
-        <color name="pale_aqua_field">#E0F2F5</color>   <!-- fondo campos, adaptado al primary -->
-        <color name="white">#FFFFFF</color>
-
-
-
+    <!-- Colores de acento para gráficos (categorías) -->
     <color name="orange_accent">#FF9800</color>
     <color name="green_accent">#4CAF50</color>
     <color name="yellow_accent">#FFC107</color>
     <color name="red_accent">#F44336</color>
     <color name="purple_accent">#9C27B0</color>
+
+    <!-- Colores adicionales para compatibilidad (usados en drawables y layouts) -->
+    <color name="teal_primary">#048ba8</color>
+    <color name="gray_medium">#9E9E9E</color>
+    <color name="gray_dark">#616161</color>
+    <color name="primary_blue">#048ba8</color>
+    <color name="secondary_gold">#e1f101</color>
+    <color name="secondary_gold_dark">#c5d400</color>
+    <color name="black">#000000</color>
+
+
+
 </resources>
