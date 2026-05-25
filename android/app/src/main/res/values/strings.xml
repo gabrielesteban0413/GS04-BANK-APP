@@ -26,6 +26,16 @@
     <string name="back_description">Atrás</string>
     <string name="logo_description">Logo</string>
 
+    <!-- Forgot Password -->
+    <string name="forgot_password_title">¿Olvidaste tu contraseña?</string>
+    <string name="forgot_password_subtitle">Ingresa tu cédula o correo electrónico y te enviaremos instrucciones para restablecer tu contraseña</string>
+    <string name="cedula_or_email_hint">Cédula o correo electrónico</string>
+    <string name="send_instructions_button">Enviar instrucciones</string>
+    <string name="back_to_login">Volver al inicio de sesión</string>
+
+
+
+
 
 
     <!-- Dashboard -->
@@ -161,7 +171,6 @@
     <string name="statistics_title">Estadísticas</string>
     <string name="statistics_subtitle">Resumen de tus movimientos</string>
     <string name="transactions_title">Transacciones</string>
-
 
 
 
