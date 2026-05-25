@@ -23,15 +23,13 @@
     <color name="red_accent">#F44336</color>
     <color name="purple_accent">#9C27B0</color>
 
-    <!-- Colores adicionales para compatibilidad (usados en drawables y layouts) -->
-    <color name="teal_primary">#048ba8</color>
-    <color name="gray_medium">#9E9E9E</color>
-    <color name="gray_dark">#616161</color>
-    <color name="primary_blue">#048ba8</color>
-    <color name="secondary_gold">#e1f101</color>
-    <color name="secondary_gold_dark">#c5d400</color>
+    <color name="gray_medium">#808080</color>
+    <color name="gray_dark">#404040</color>
+    <color name="teal_primary">#008080</color>
+    <color name="primary_blue">#0000FF</color>
+    <color name="secondary_gold">#FFD700</color>
+    <color name="secondary_gold_dark">#B8860B</color>
     <color name="black">#000000</color>
-
 
 
 </resources>

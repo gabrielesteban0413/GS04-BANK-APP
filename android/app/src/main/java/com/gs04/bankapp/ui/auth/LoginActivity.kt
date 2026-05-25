@@ -27,8 +27,9 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun setupListeners() {
-        binding.btnLogin.setOnClickListener {
-            val email = binding.etEmail.text.toString().trim()
+        // CORREGIDO: Ahora usamos btnRegister
+        binding.btnRegister.setOnClickListener {
+            val email = binding.etCedula.text.toString().trim()
             val password = binding.etPassword.text.toString().trim()
 
             if (email.isEmpty() || password.isEmpty()) {
@@ -38,8 +39,7 @@ class LoginActivity : AppCompatActivity() {
             }
         }
 
-        // EL BOTÓN DE REGISTRO VA AQUÍ, AFUERA DE CUALQUIER OBSERVADOR
-        binding.tvRegister.setOnClickListener {
+        binding.tvRegisterLink.setOnClickListener {
             val intent = Intent(this, RegisterActivity::class.java)
             startActivity(intent)
         }
@@ -50,13 +50,12 @@ class LoginActivity : AppCompatActivity() {
             when (state) {
                 is LoginViewModel.LoginUiState.Loading -> {
                     binding.progressBar.visibility = View.VISIBLE
-                    binding.btnLogin.isEnabled = false
+                    binding.btnRegister.isEnabled = false // Ya está correcto
                 }
                 is LoginViewModel.LoginUiState.Success -> {
                     binding.progressBar.visibility = View.GONE
-                    binding.btnLogin.isEnabled = true
+                    binding.btnRegister.isEnabled = true
 
-                    // Navegación a Dashboard
                     val data = state.data
                     val intent = Intent(this, DashboardActivity::class.java)
                     intent.putExtra("userId", data.userId)
@@ -69,12 +68,14 @@ class LoginActivity : AppCompatActivity() {
                 }
                 is LoginViewModel.LoginUiState.Error -> {
                     binding.progressBar.visibility = View.GONE
-                    binding.btnLogin.isEnabled = true
+                    // CORREGIDO: Cambiamos btnLogin por btnRegister
+                    binding.btnRegister.isEnabled = true
                     Toast.makeText(this, state.message, Toast.LENGTH_LONG).show()
                 }
                 else -> {
                     binding.progressBar.visibility = View.GONE
-                    binding.btnLogin.isEnabled = true
+                    // CORREGIDO: Cambiamos btnLogin por btnRegister
+                    binding.btnRegister.isEnabled = true
                 }
             }
         }.launchIn(lifecycleScope)
