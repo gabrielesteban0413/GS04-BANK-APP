@@ -76,6 +76,16 @@ public class AuthService {
         }
     }
 
+    public String forgotPassword(String identifier) {
+        // 1. Buscar usuario
+        User user = userRepository.findByCedula(identifier)
+                .orElseThrow(() -> new RuntimeException("Usuario no encontrado"));
+
+        // 2. Aquí iría la lógica para enviar el correo o generar un token temporal
+        // Por ahora, retornamos un mensaje de éxito
+        return "Instrucciones enviadas al correo registrado para: " + user.getNombre();
+    }
+
     public String getUserRole(String userId) {
         return "USER";
     }

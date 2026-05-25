@@ -27,7 +27,7 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun setupListeners() {
-        // CORREGIDO: Ahora usamos btnRegister
+        // 1. Botón de Login (el que usas para entrar)
         binding.btnRegister.setOnClickListener {
             val email = binding.etCedula.text.toString().trim()
             val password = binding.etPassword.text.toString().trim()
@@ -39,6 +39,13 @@ class LoginActivity : AppCompatActivity() {
             }
         }
 
+        // 2. Link de Olvidé mi contraseña (INDEPENDIENTE)
+        binding.tvForgotPassword.setOnClickListener {
+            val intent = Intent(this, ForgotPasswordActivity::class.java)
+            startActivity(intent)
+        }
+
+        // 3. Link de Registro
         binding.tvRegisterLink.setOnClickListener {
             val intent = Intent(this, RegisterActivity::class.java)
             startActivity(intent)

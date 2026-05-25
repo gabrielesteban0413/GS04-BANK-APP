@@ -130,6 +130,7 @@
                 android:layout_gravity="end"
                 android:layout_marginBottom="32dp"
                 android:padding="8dp"
+                android:elevation="10dp"
                 android:clickable="true"
                 android:focusable="true" />
 

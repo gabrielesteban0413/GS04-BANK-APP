@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import androidx.appcompat.app.AppCompatActivity
+import com.gs04.bankapp.R  // <--- AGREGA ESTA LÍNEA
 import com.gs04.bankapp.ui.auth.LoginActivity
 
 class SplashActivity : AppCompatActivity() {
