@@ -63,10 +63,6 @@ class MyCardsActivity : AppCompatActivity() {
     private fun getSampleCards(): List<Card> = listOf(
         Card("**** **** **** 1111", "Juan Pérez", "12/25", "123"),
         Card("**** **** **** 2222", "María López", "10/26", "456"),
-        Card("**** **** **** 3333", "Carlos Gómez", "08/27", "789"),
-        Card("**** **** **** 4444", "Ana Torres", "05/28", "012"),
-        Card("**** **** **** 5555", "Luis Castro", "02/29", "345"),
-        Card("**** **** **** 6666", "Elena Ruiz", "11/30", "678"),
-        Card("**** **** **** 7777", "Pedro Díaz", "09/31", "901")
+
     )
 }

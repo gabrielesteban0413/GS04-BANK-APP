@@ -54,7 +54,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <!-- Cabecera -->
+            <!-- Cabecera con avatar y nombre -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -118,7 +118,7 @@
                 android:paddingHorizontal="20dp"
                 android:paddingBottom="32dp">
 
-                <!-- Tarjeta saldo -->
+                <!-- Tarjeta de saldo -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -204,29 +204,29 @@
                     </LinearLayout>
                 </LinearLayout>
 
-                <!-- Botones Enviar / Recibir -->
+                <!-- Botones de acción (Enviar, Recibir, Tarjetas, Estadísticas) -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="24dp"
-                    android:gravity="center"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:weightSum="4">
 
                     <LinearLayout
                         android:id="@+id/btnSend"
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_margin="10dp"
+                        android:layout_weight="1"
                         android:gravity="center"
                         android:orientation="vertical"
                         android:clickable="true"
                         android:focusable="true">
 
                         <ImageView
-                            android:layout_width="65dp"
-                            android:layout_height="65dp"
+                            android:layout_width="55dp"
+                            android:layout_height="55dp"
                             android:background="@drawable/bg_circle_primary_light"
-                            android:padding="18dp"
+                            android:padding="15dp"
                             android:src="@drawable/ic_send"
                             android:contentDescription="@string/dashboard_send" />
 
@@ -236,29 +236,24 @@
                             android:layout_marginTop="8dp"
                             android:text="@string/dashboard_send"
                             android:textColor="@color/primary_dark"
-                            android:textSize="16sp" />
-                        <Button
-                        android:id="@+id/btnLogout"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/dashboard_menu_logout" />
+                            android:textSize="14sp" />
                     </LinearLayout>
 
                     <LinearLayout
                         android:id="@+id/btnReceive"
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_margin="10dp"
+                        android:layout_weight="1"
                         android:gravity="center"
                         android:orientation="vertical"
                         android:clickable="true"
                         android:focusable="true">
 
                         <ImageView
-                            android:layout_width="65dp"
-                            android:layout_height="65dp"
+                            android:layout_width="55dp"
+                            android:layout_height="55dp"
                             android:background="@drawable/bg_circle_primary_light"
-                            android:padding="18dp"
+                            android:padding="15dp"
                             android:src="@drawable/ic_receive"
                             android:contentDescription="@string/dashboard_receive" />
 
@@ -268,11 +263,65 @@
                             android:layout_marginTop="8dp"
                             android:text="@string/dashboard_receive"
                             android:textColor="@color/primary_dark"
-                            android:textSize="16sp" />
+                            android:textSize="14sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/btnCards"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:clickable="true"
+                        android:focusable="true">
+
+                        <ImageView
+                            android:layout_width="55dp"
+                            android:layout_height="55dp"
+                            android:background="@drawable/bg_circle_primary_light"
+                            android:padding="15dp"
+                            android:src="@drawable/ic_cards"
+                            android:contentDescription="@string/dashboard_cards" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="@string/dashboard_cards"
+                            android:textColor="@color/primary_dark"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/btnStats"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:clickable="true"
+                        android:focusable="true">
+
+                        <ImageView
+                            android:layout_width="55dp"
+                            android:layout_height="55dp"
+                            android:background="@drawable/bg_circle_primary_light"
+                            android:padding="15dp"
+                            android:src="@drawable/ic_stats"
+                            android:contentDescription="@string/dashboard_stats" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="@string/dashboard_stats"
+                            android:textColor="@color/primary_dark"
+                            android:textSize="14sp" />
                     </LinearLayout>
                 </LinearLayout>
 
-                <!-- Recientes -->
+                <!-- Transacciones recientes -->
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -334,7 +383,7 @@
         </LinearLayout>
     </ScrollView>
 
-    <!-- Menú inferior -->
+    <!-- Bottom Menu -->
     <LinearLayout
         android:id="@+id/bottomMenu"
         android:layout_width="match_parent"
@@ -361,7 +410,8 @@
                 android:layout_width="28dp"
                 android:layout_height="28dp"
                 android:src="@drawable/ic_home"
-                android:contentDescription="@string/dashboard_menu_home" />
+                android:contentDescription="@string/dashboard_menu_home"
+                app:tint="@color/primary" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -385,7 +435,8 @@
                 android:layout_width="28dp"
                 android:layout_height="28dp"
                 android:src="@drawable/ic_history"
-                android:contentDescription="@string/dashboard_menu_history" />
+                android:contentDescription="@string/dashboard_menu_history"
+                app:tint="@color/text_hint_muted" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -409,7 +460,8 @@
                 android:layout_width="28dp"
                 android:layout_height="28dp"
                 android:src="@drawable/ic_profile"
-                android:contentDescription="@string/dashboard_menu_profile" />
+                android:contentDescription="@string/dashboard_menu_profile"
+                app:tint="@color/text_hint_muted" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -433,7 +485,8 @@
                 android:layout_width="28dp"
                 android:layout_height="28dp"
                 android:src="@drawable/ic_logout"
-                android:contentDescription="@string/dashboard_menu_logout" />
+                android:contentDescription="@string/dashboard_menu_logout"
+                app:tint="@color/text_hint_muted" />
 
             <TextView
                 android:layout_width="wrap_content"
